@@ -1,14 +1,15 @@
-import { createBrowserRouter, Router } from "react-router";
+import { createBrowserRouter } from "react-router-dom"; // ✅ FIXED
 import Main from "../layout/Main/Main";
 import Home from "../layout/Main/Home";
+
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <p>Error....</p>,
+    errorElement: <p>Error...</p>,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
       },
     ],

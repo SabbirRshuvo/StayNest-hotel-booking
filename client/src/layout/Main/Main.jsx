@@ -1,9 +1,14 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router-dom";
+import Navbar from "../../sheared/Navbar";
 
 const Main = () => {
+  const isOwerPath = useLocation().pathname.includes("owner");
   return (
     <div>
-      <Outlet />
+      {!isOwerPath && <Navbar />}
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 };
