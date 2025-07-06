@@ -8,11 +8,11 @@ import { Link } from "react-router";
 const SignIn = () => {
   return (
     <div className="flex h-[700px] w-full">
-      <div className="w-full  hidden md:inline-block max-w-2xl pt-10 pl-20">
+      <div className="w-full  hidden md:inline-block max-w-2xl pt-20 pl-20">
         <Lottie animationData={loginAnimation} loop={true} />
       </div>
 
-      <div className="w-full flex flex-col items-center justify-center">
+      <div className="w-full flex flex-col items-center justify-center ">
         <form className="md:w-96 w-80 flex flex-col items-center justify-center">
           <h2 className="text-4xl text-gray-900 font-medium">Sign in</h2>
           <p className="text-sm text-gray-500/90 mt-3">

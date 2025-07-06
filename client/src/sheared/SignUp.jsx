@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import registraionImage from "../assets/signUp.json";
 import {
+  AiOutlineCamera,
   AiOutlineEye,
   AiOutlineMail,
   AiOutlinePhone,
@@ -9,13 +10,27 @@ import {
 import { FaLock } from "react-icons/fa";
 import { Link } from "react-router";
 import { FcGoogle } from "react-icons/fc";
+import { useForm } from "react-hook-form";
 
 const SignUp = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const password = watch("password");
   return (
     <div className="flex h-[700px] w-full">
+      <div className="w-full  hidden md:inline-block max-w-2xl pt-20 pr-20">
+        <Lottie animationData={registraionImage} loop={true} />
+      </div>
       {/* form section */}
-      <div className="w-full flex flex-col items-center justify-center">
-        <form className="md:w-96 w-80 flex flex-col items-center justify-center">
+      <div className="w-full flex flex-col items-center justify-center mt-20">
+        <form
+          onSubmit={handleSubmit((data) => console.log(data))}
+          className="md:w-96 w-80 flex flex-col items-center justify-center"
+        >
           <h2 className="text-4xl text-gray-900 font-medium">Sign Up </h2>
           <p className="text-sm text-gray-500/90 mt-3">
             Welcome ! Please Create an account!
@@ -41,41 +56,88 @@ const SignUp = () => {
             </p>
             <div className="w-full h-px bg-gray-300/90"></div>
           </div>
-          {/* field section */}
-          {/* name field */}
+          {/* form filed section */}
           <div className="flex flex-col space-y-5 w-full  max-w-md mx-auto">
+            {/* name field */}
+            {errors.name && (
+              <p className="text-red-500 text-sm mb-1">{errors.name.message}</p>
+            )}
             <div className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
               <AiOutlineUser className="text-gray-600" />
               <input
                 type="text"
                 placeholder="Full Name"
+                {...register("name", { required: "Full Name is required" })}
                 className="bg-transparent text-gray-500/80 placeholder-gray-500/80 outline-none text-sm w-full h-full"
               />
             </div>
-            {/* phone field */}
+
+            {/* contact field */}
+            {errors.phone && (
+              <p className="text-red-500 text-sm mb-1">
+                {errors.phone.message}
+              </p>
+            )}
             <div className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
               <AiOutlinePhone className="text-gray-600" />
               <input
                 type="tel"
                 placeholder="Phone Number"
+                {...register("phone", {
+                  required: "Phone number is required",
+                  minLength: {
+                    value: 11,
+                    message: "Phone must be 11 digits",
+                  },
+                })}
                 className="bg-transparent text-gray-500/80 placeholder-gray-500/80 outline-none text-sm w-full h-full"
               />
             </div>
             {/* email */}
+            {errors.email && (
+              <p className="text-red-500 text-sm mb-1">
+                {errors.email.message}
+              </p>
+            )}
             <div className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
               <AiOutlineMail className="text-gray-600" />
               <input
                 type="email"
                 placeholder="Email id"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Enter a valid email address",
+                  },
+                })}
                 className="bg-transparent text-gray-500/80 placeholder-gray-500/80 outline-none text-sm w-full h-full"
               />
             </div>
             {/* password */}
+            {errors.password && (
+              <p className="text-red-500 text-sm mb-1">
+                {errors.password.message}
+              </p>
+            )}
             <div className="relative w-full">
               <div className="flex items-center bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 pr-12 gap-2">
                 <FaLock className="text-gray-600" />
                 <input
+                  type="password"
                   placeholder="Password"
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message:
+                        "Password must be at least 6 characters or bigger",
+                    },
+                    pattern: {
+                      value: /^(?=.*[A-Z])(?=.*[!@#$&*]).{6,}$/,
+                      message: "Use 1 capital & 1 special character (!@#$&*)",
+                    },
+                  })}
                   className="bg-transparent text-gray-500/80 placeholder-gray-500/80 outline-none text-sm w-full h-full"
                 />
               </div>
@@ -89,11 +151,22 @@ const SignUp = () => {
               </button>
             </div>
             {/* confirm password */}
+            {errors.confirmPassword && (
+              <p className="text-red-500 text-sm mb-1">
+                {errors.confirmPassword.message}
+              </p>
+            )}
             <div className="relative w-full">
               <div className="flex items-center bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 pr-12 gap-2">
                 <FaLock className="text-gray-600" />
                 <input
+                  type="password"
                   placeholder="Confirm Password"
+                  {...register("confirmPassword", {
+                    required: "Please confirm your password",
+                    validate: (value) =>
+                      value === password || "Passwords do not match",
+                  })}
                   className="bg-transparent text-gray-500/80 placeholder-gray-500/80 outline-none text-sm w-full h-full"
                 />
               </div>
@@ -105,6 +178,11 @@ const SignUp = () => {
               >
                 <AiOutlineEye />
               </button>
+            </div>
+            {/* upload section */}
+            <div className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
+              <AiOutlineCamera />
+              <input type="file" className="file-input file-input-ghost " />
             </div>
           </div>
           <button
@@ -126,9 +204,6 @@ const SignUp = () => {
         </form>
       </div>
       {/* image section */}
-      <div className="w-full  hidden md:inline-block max-w-2xl pt-10 pr-20">
-        <Lottie animationData={registraionImage} loop={true} />
-      </div>
     </div>
   );
 };
