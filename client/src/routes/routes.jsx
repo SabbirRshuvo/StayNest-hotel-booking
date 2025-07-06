@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom"; // ✅ FIXED
 import Main from "../layout/Main/Main";
 import Home from "../layout/Main/Home";
+import Login from "../sheared/Login";
+import Registar from "../sheared/Registar";
 
 const routes = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/registar",
+    element: <Registar />,
   },
 ]);
 

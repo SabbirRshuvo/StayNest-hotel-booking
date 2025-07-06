@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       {/* Logo */}
       <Link to="/" className="group inline-block">
-        <h2 className="text-xl md:text-2xl  relative pb-1">
+        <h2 className="text-xl md:text-2xl text-slate-200  relative pb-1">
           StayNest
           <span className="block h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full absolute bottom-0 left-0"></span>
         </h2>
@@ -72,9 +72,15 @@ const Navbar = () => {
             isScrolled && "invert"
           } h-7 transition-all duration-500 cursor-pointer`}
         />
-        <button className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500 cursor-pointer">
-          Login
-        </button>
+        <Link
+          to="/login"
+          className="relative overflow-hidden group px-8 py-2.5 rounded-full border border-black text-gray-200 font-semibold ml-4 cursor-pointer"
+        >
+          <span className="relative z-10 transition duration-300 group-hover:text-white ">
+            Login
+          </span>
+          <span className="absolute left-0 top-0 h-full w-0 bg-black transition-all duration-500 group-hover:w-full z-0"></span>
+        </Link>
       </div>
 
       {/* Mobile Menu Button */}

@@ -73,9 +73,16 @@ const Banner = () => {
           />
         </div>
 
-        <button className="flex items-center justify-center gap-1 rounded-md bg-black py-3 px-4 text-white my-auto cursor-pointer max-md:w-full max-md:py-1">
-          <img src={assets.searchIcon} alt="searchIcon" className="h-7" />
-          <span>Search</span>
+        <button className="relative group overflow-hidden rounded-md py-3 px-4 text-black border border-black flex items-center justify-center gap-1 my-auto cursor-pointer max-md:w-full max-md:py-1">
+          <span className="relative z-10 flex items-center gap-1 transition duration-300 group-hover:text-white">
+            <img
+              src={assets.searchIcon}
+              alt="searchIcon"
+              className="h-7 brightness-0 group-hover:brightness-200 transition duration-300"
+            />
+            <span>Search</span>
+          </span>
+          <span className="absolute left-0 top-0 h-full w-0 bg-black transition-all duration-500 group-hover:w-full z-0"></span>
         </button>
       </form>
     </div>

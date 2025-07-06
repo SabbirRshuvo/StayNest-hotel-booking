@@ -1,7 +1,5 @@
-import React from "react";
-
 const Registar = () => {
-  return <div>Registar</div>;
+  return <div>registration</div>;
 };
 
 export default Registar;
