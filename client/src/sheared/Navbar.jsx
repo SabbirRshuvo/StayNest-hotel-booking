@@ -73,7 +73,7 @@ const Navbar = () => {
           } h-7 transition-all duration-500 cursor-pointer`}
         />
         <Link
-          to="/login"
+          to="/sign-in"
           className="relative overflow-hidden group px-8 py-2.5 rounded-full border border-black text-gray-200 font-semibold ml-4 cursor-pointer"
         >
           <span className="relative z-10 transition duration-300 group-hover:text-white ">

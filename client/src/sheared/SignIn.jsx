@@ -1,11 +1,11 @@
 import Lottie from "lottie-react";
-import loginAnimation from "../assets/lgoin.json";
+import loginAnimation from "../assets/signIn.json";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
 import { Link } from "react-router";
 
-const Login = () => {
+const SignIn = () => {
   return (
     <div className="flex h-[700px] w-full">
       <div className="w-full  hidden md:inline-block max-w-2xl pt-10 pl-20">
@@ -81,7 +81,7 @@ const Login = () => {
           <p className="text-gray-500/90 text-sm mt-4">
             Don’t have an account?{" "}
             <Link
-              to="/registar"
+              to="/sign-up"
               className="text-indigo-400 hover:underline"
               href="#"
             >
@@ -94,4 +94,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;
