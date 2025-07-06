@@ -7,19 +7,20 @@ import {
   AiOutlinePhone,
   AiOutlineUser,
 } from "react-icons/ai";
-import { FaLock } from "react-icons/fa";
+import { FaEyeSlash, FaLock } from "react-icons/fa";
 import { Link } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const SignUp = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const password = watch("password");
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="flex h-[700px] w-full">
       <div className="w-full  hidden md:inline-block max-w-2xl pt-20 pr-20">
@@ -124,7 +125,7 @@ const SignUp = () => {
               <div className="flex items-center bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 pr-12 gap-2">
                 <FaLock className="text-gray-600" />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   {...register("password", {
                     required: "Password is required",
@@ -144,45 +145,29 @@ const SignUp = () => {
 
               {/* Toggle Button */}
               <button
+                onClick={() => setShowPassword(!showPassword)}
                 type="button"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl cursor-pointer"
               >
-                <AiOutlineEye />
+                {showPassword ? <AiOutlineEye /> : <FaEyeSlash />}
               </button>
             </div>
-            {/* confirm password */}
-            {errors.confirmPassword && (
+
+            {/* upload section */}
+            {errors.image && (
               <p className="text-red-500 text-sm mb-1">
-                {errors.confirmPassword.message}
+                {errors.image.message}
               </p>
             )}
-            <div className="relative w-full">
-              <div className="flex items-center bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 pr-12 gap-2">
-                <FaLock className="text-gray-600" />
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  {...register("confirmPassword", {
-                    required: "Please confirm your password",
-                    validate: (value) =>
-                      value === password || "Passwords do not match",
-                  })}
-                  className="bg-transparent text-gray-500/80 placeholder-gray-500/80 outline-none text-sm w-full h-full"
-                />
-              </div>
-
-              {/* Toggle Button */}
-              <button
-                type="button"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl"
-              >
-                <AiOutlineEye />
-              </button>
-            </div>
-            {/* upload section */}
             <div className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
               <AiOutlineCamera />
-              <input type="file" className="file-input file-input-ghost " />
+              <input
+                {...register("image", {
+                  required: "Image is required",
+                })}
+                type="file"
+                className="file-input file-input-ghost "
+              />
             </div>
           </div>
           <button
