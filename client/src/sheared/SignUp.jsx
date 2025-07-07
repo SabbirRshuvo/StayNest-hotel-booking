@@ -11,15 +11,55 @@ import { FaEyeSlash, FaLock } from "react-icons/fa";
 import { Link } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import axios from "axios";
+import AuthContext from "../provider/AuthContext";
+import Swal from "sweetalert2";
 const SignUp = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const [showPassword, setShowPassword] = useState(false);
+
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+
+  const onSubmit = async (data) => {
+    try {
+      await createUser(data.email, data.password);
+
+      const formData = new formData();
+      formData.append("image", data.image[0]);
+      const res = await axios.post(
+        `https://api.imgbb.com/1/upload?key=${
+          import.meta.env.VITE_ImageBBAPiKey
+        }`,
+        formData
+      );
+      const imageUrl = res.data.data.url;
+      console.log("image uploaded", imageUrl);
+
+      await updateUserProfile(data.name, data.imageUrl);
+      alert("created successfully");
+
+      // databased data adding section
+      Swal.fire({
+        icon: "success",
+        title: "SignUp Successful",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+      reset();
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "SignUp Failed",
+        text: error.message,
+      });
+    }
+  };
 
   return (
     <div className="flex h-[700px] w-full">
@@ -29,7 +69,7 @@ const SignUp = () => {
       {/* form section */}
       <div className="w-full flex flex-col items-center justify-center mt-20">
         <form
-          onSubmit={handleSubmit((data) => console.log(data))}
+          onSubmit={handleSubmit(onSubmit)}
           className="md:w-96 w-80 flex flex-col items-center justify-center"
         >
           <h2 className="text-4xl text-gray-900 font-medium">Sign Up </h2>

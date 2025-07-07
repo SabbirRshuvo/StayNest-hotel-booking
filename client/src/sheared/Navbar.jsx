@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { assets } from "../assets/assets";
+import AuthContext from "../provider/AuthContext";
 const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
@@ -11,6 +12,8 @@ const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,15 +75,19 @@ const Navbar = () => {
             isScrolled && "invert"
           } h-7 transition-all duration-500 cursor-pointer`}
         />
-        <Link
-          to="/sign-in"
-          className="relative overflow-hidden group px-8 py-2.5 rounded-full border border-black text-gray-200 font-semibold ml-4 cursor-pointer"
-        >
-          <span className="relative z-10 transition duration-300 group-hover:text-black ">
-            Sign In
-          </span>
-          <span className="absolute left-0 top-0 h-full w-0 bg-white  transition-all duration-500 group-hover:w-full z-0"></span>
-        </Link>
+        {user ? (
+          <p>{user.name}</p>
+        ) : (
+          <Link
+            to="/sign-in"
+            className="relative overflow-hidden group px-8 py-2.5 rounded-full border border-black text-gray-200 font-semibold ml-4 cursor-pointer"
+          >
+            <span className="relative z-10 transition duration-300 group-hover:text-black ">
+              Sign In
+            </span>
+            <span className="absolute left-0 top-0 h-full w-0 bg-white  transition-all duration-500 group-hover:w-full z-0"></span>
+          </Link>
+        )}
       </div>
 
       {/* Mobile Menu Button */}
