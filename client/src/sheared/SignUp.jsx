@@ -27,11 +27,13 @@ const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const onSubmit = async (data) => {
+    const { name, email, password, image } = data;
     try {
-      await createUser(data.email, data.password);
+      await createUser(email, password);
 
-      const formData = new formData();
-      formData.append("image", data.image[0]);
+      const formData = new FormData();
+      formData.append("image", image[0]);
+
       const res = await axios.post(
         `https://api.imgbb.com/1/upload?key=${
           import.meta.env.VITE_ImageBBAPiKey
@@ -41,8 +43,8 @@ const SignUp = () => {
       const imageUrl = res.data.data.url;
       console.log("image uploaded", imageUrl);
 
-      await updateUserProfile(data.name, data.imageUrl);
-      alert("created successfully");
+      await updateUserProfile(name, imageUrl);
+      console.log("profile updated");
 
       // databased data adding section
       Swal.fire({
