@@ -37,15 +37,23 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0  w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50  ${
         isScrolled
-          ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
+          ? "bg-white/80 shadow-md text-gray-800 backdrop-blur-lg py-3 md:py-4"
           : "py-4 md:py-6"
       }`}
     >
       {/* Logo */}
       <Link to="/" className="group inline-block">
-        <h2 className="text-xl md:text-2xl text-slate-200  relative pb-1">
+        <h2
+          className={`text-xl md:text-2xl ${
+            isScrolled ? "text-gray-800 " : "text-slate-200"
+          }  relative pb-1`}
+        >
           StayNest
-          <span className="block h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full absolute bottom-0 left-0"></span>
+          <span
+            className={`block h-[2px] w-0 ${
+              isScrolled ? "bg-black" : "bg-white"
+            } transition-all duration-300 group-hover:w-full absolute bottom-0 left-0`}
+          ></span>
         </h2>
       </Link>
 
