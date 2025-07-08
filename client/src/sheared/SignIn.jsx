@@ -15,12 +15,28 @@ const SignIn = () => {
   const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const from = location.state?.from?.pathname || "/";
+  const { signInWithGoogle } = useContext(AuthContext);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const handleGoogle = async () => {
+    try {
+      const result = await signInWithGoogle();
+      const user = result.user;
+      console.log(user);
+      navigate("/");
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "SignUp Failed",
+        text: error.message,
+      });
+    }
+  };
 
   const onSubmit = async (data) => {
     try {
@@ -60,6 +76,7 @@ const SignIn = () => {
           </p>
 
           <button
+            onClick={handleGoogle}
             type="button"
             className="relative group overflow-hidden w-full mt-8 h-12 rounded-full border border-gray-300 text-gray-700 flex items-center justify-center gap-3 cursor-pointer"
           >

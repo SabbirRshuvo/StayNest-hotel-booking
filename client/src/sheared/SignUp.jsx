@@ -8,7 +8,7 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { FaEyeSlash, FaLock } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
@@ -25,6 +25,23 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleGoogle = async () => {
+    try {
+      const result = await signInWithGoogle();
+      const user = result.user;
+      console.log(user);
+      navigate("/");
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "SignUp Failed",
+        text: error.message,
+      });
+    }
+  };
 
   const onSubmit = async (data) => {
     const { name, email, password, image } = data;
@@ -79,6 +96,7 @@ const SignUp = () => {
             Welcome ! Please Create an account!
           </p>
           <button
+            onClick={handleGoogle}
             type="button"
             className="relative group overflow-hidden w-full mt-8 h-12 rounded-full border border-gray-300 text-gray-700 flex items-center justify-center gap-3 cursor-pointer"
           >

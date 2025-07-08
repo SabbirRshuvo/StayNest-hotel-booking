@@ -31,6 +31,7 @@ const Navbar = () => {
       console.error("logout error", error);
     }
   };
+  console.log(user);
 
   return (
     <nav

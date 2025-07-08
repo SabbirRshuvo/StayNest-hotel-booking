@@ -86,7 +86,7 @@ const Banner = () => {
         <div className="w-full md:w-auto">
           <button
             type="submit"
-            className="relative group overflow-hidden rounded-md py-3 px-6 text-black border border-black flex items-center justify-center gap-2 w-full transition-all"
+            className="relative group overflow-hidden rounded-md py-3 px-6 text-black border border-black flex items-center justify-center gap-2 w-full transition-all cursor-pointer"
           >
             <span className="relative z-10 flex items-center gap-2 transition duration-300 group-hover:text-white">
               <img
