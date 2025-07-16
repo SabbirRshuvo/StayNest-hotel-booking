@@ -117,12 +117,12 @@ const Navbar = () => {
         ) : (
           <Link
             to="/sign-in"
-            className="relative overflow-hidden group px-8 py-2.5 rounded-full border border-black text-gray-200 font-semibold ml-4 cursor-pointer"
+            className="relative overflow-hidden group px-8 py-2.5 rounded-full border border-black text-black font-semibold ml-4 cursor-pointer"
           >
             <span className="relative z-10 transition duration-300 group-hover:text-black ">
               Sign In
             </span>
-            <span className="absolute left-0 top-0 h-full w-0 bg-white  transition-all duration-500 group-hover:w-full z-0"></span>
+            <span className="absolute left-0 top-0 h-full w-0 bg-white  transition-all duration-500 group-hover:w-full  z-0"></span>
           </Link>
         )}
       </div>
