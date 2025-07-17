@@ -26,7 +26,7 @@ const Testimonials = () => {
     setTooltip({ ...tooltip, visible: false });
   };
   return (
-    <div className="flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32  bg-slate-50 pt-20 pb-30">
+    <div className="flex flex-col items-center px-6 md:px-16 lg:px-24 xl:px-32  bg-slate-50 pt-20 pb-30 text-gray-800">
       <Title
         title="What our Guest Say"
         subTitle="Discover why discerning travelers choose QuickStay for their luxury accommodations around the world."
@@ -38,7 +38,7 @@ const Testimonials = () => {
             ref={(el) => (cardRefs.current[index] = el)}
             onMouseMove={(e) => handleMouseMove(e, index)}
             onMouseLeave={handleMouseLeave}
-            className="relative border border-gray-200 rounded-lg overflow-hidden max-w-sm hover:shadow-lg transition-shadow duration-300"
+            className="relative border border-gray-200 rounded-lg overflow-hidden max-w-sm w-full h-[240px] flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
           >
             {tooltip.visible && tooltip.text === testimonial.name && (
               <span

@@ -5,7 +5,7 @@ import AuthContext from "../provider/AuthContext";
 const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Hotels", path: "/" },
+    { name: "Hotels", path: "/all-rooms" },
     { name: "Experience", path: "/" },
     { name: "About", path: "/" },
   ];

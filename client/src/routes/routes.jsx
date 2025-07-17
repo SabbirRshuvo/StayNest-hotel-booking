@@ -3,6 +3,7 @@ import Main from "../layout/Main/Main";
 import Home from "../layout/Main/Home";
 import SignUp from "../sheared/SignUp";
 import SignIn from "../sheared/SignIn";
+import AllRooms from "../pages/AllRooms";
 
 const routes = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const routes = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/all-rooms",
+        element: <AllRooms />,
       },
     ],
   },
