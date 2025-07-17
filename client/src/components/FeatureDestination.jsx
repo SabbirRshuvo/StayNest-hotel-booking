@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 const FeatureDestination = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20">
+    <div className="flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-50 py-20 text-gray-800">
       <Title
         title="Featured Destination"
         subTitle="Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences"
@@ -23,7 +23,7 @@ const FeatureDestination = () => {
           navigate("/rooms");
           scrollTo(0, 0);
         }}
-        className="my-16 px-4 text-sm font-medium border py-1 border-gray-300 rounded bg-white hover:bg-gray-50 transition-all cursor-pointer"
+        className="my-16 px-4 text-sm font-medium border py-1 border-gray-300 rounded  hover:bg-gray-200 transition-all cursor-pointer"
       >
         View All Destination Details
       </button>
