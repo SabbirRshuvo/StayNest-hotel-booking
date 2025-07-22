@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { assets } from "../assets/assets";
 import AuthContext from "../provider/AuthContext";
 const Navbar = () => {
@@ -33,10 +33,13 @@ const Navbar = () => {
   };
   console.log(user);
 
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
     <nav
-      className={`fixed top-0 left-0  w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50   ${
-        isScrolled
+      className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${
+        isScrolled || !isHome
           ? "bg-white/80 shadow-md text-gray-800 backdrop-blur-lg py-3 md:py-4"
           : "py-4 md:py-6"
       }`}
@@ -45,13 +48,13 @@ const Navbar = () => {
       <Link to="/" className="group inline-block">
         <h2
           className={`text-xl md:text-2xl ${
-            isScrolled ? "text-gray-800 " : "text-slate-200"
-          }  relative pb-1`}
+            isScrolled || !isHome ? "text-gray-800" : "text-slate-200"
+          } relative pb-1`}
         >
           StayNest
           <span
             className={`block h-[2px] w-0 ${
-              isScrolled ? "bg-black" : "bg-white"
+              isScrolled || !isHome ? "bg-slate-700" : "bg-white"
             } transition-all duration-300 group-hover:w-full absolute bottom-0 left-0`}
           ></span>
         </h2>
@@ -64,20 +67,20 @@ const Navbar = () => {
             key={i}
             href={link.path}
             className={`group flex flex-col gap-0.5 ${
-              isScrolled ? "text-gray-700" : "text-white"
+              isScrolled || !isHome ? "text-gray-700" : "text-white"
             }`}
           >
             {link.name}
             <div
               className={`${
-                isScrolled ? "bg-gray-700" : "bg-white"
+                isScrolled || !isHome ? "bg-gray-700" : "bg-white"
               } h-0.5 w-0 group-hover:w-full transition-all duration-300`}
             />
           </a>
         ))}
         <button
           className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
-            isScrolled ? "text-black" : "text-white"
+            isScrolled || !isHome ? "text-black" : "text-white"
           } transition-all`}
         >
           Dashboard
@@ -89,9 +92,10 @@ const Navbar = () => {
         <img
           src={assets.searchIcon}
           alt="search"
-          className={`${
-            isScrolled && "invert"
-          } h-7 transition-all duration-500 cursor-pointer`}
+          className={`h-7 transition-all duration-500 cursor-pointer 
+    ${isScrolled && isHome && "invert"} 
+    ${!isHome && "invert"} 
+  `}
         />
 
         {user ? (
@@ -117,12 +121,9 @@ const Navbar = () => {
         ) : (
           <Link
             to="/sign-in"
-            className="relative overflow-hidden group px-8 py-2.5 rounded-full border border-black text-black font-semibold ml-4 cursor-pointer"
+            className="px-8 py-2.5 rounded-full border border-gray-400 text-gray-800 font-medium ml-4 cursor-pointer hover:bg-gray-100 hover:shadow-md transition duration-300"
           >
-            <span className="relative z-10 transition duration-300 group-hover:text-black ">
-              Sign In
-            </span>
-            <span className="absolute left-0 top-0 h-full w-0 bg-white    transition-all duration-500 group-hover:w-full  z-0"></span>
+            Sign In
           </Link>
         )}
       </div>

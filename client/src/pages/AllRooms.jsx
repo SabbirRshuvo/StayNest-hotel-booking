@@ -5,16 +5,15 @@ import StarRating from "../components/StarRating";
 const AllRooms = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-start justify-between pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32  text-white ">
+    <div className="flex flex-col-reverse lg:flex-row items-start justify-between pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32  text-gray-800 ">
       {/* left side */}
       <div>
         <div className="flex flex-col items-start text-left">
           <h1 className="font-playfair text-4xl md:text-[40px]">Hotel Rooms</h1>
-          <p className="text-sm md:text-base  mt-2 max-w-174">
+          <p className="text-sm md:text-base text-gray-600 mt-2 max-w-174 mb-4">
             Take advantage of our limited-time offers and special packages to
             enhance your stay and create unforgettable memories.
           </p>
-          <span>this is for a </span>
         </div>
         {roomsDummyData.map((room) => (
           <div key={room._id}>
@@ -29,7 +28,7 @@ const AllRooms = () => {
               className="max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer"
             />
             <div className="md:w-1/2 flex flex-col gap-2">
-              <p className="text-white">{room.hotel.city}</p>
+              <p className="text-slate-500">{room.hotel.city}</p>
               <p
                 onClick={() => {
                   navigate(`/rooms/${room._id}`);

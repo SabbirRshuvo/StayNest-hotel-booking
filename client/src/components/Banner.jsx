@@ -96,7 +96,7 @@ const Banner = () => {
               />
               <span className="text-sm font-medium">Search</span>
             </span>
-            <span className="absolute left-0 top-0 h-full w-0 bg-black transition-all duration-500 group-hover:w-full z-0"></span>
+            <span className="absolute left-0 top-0 h-full w-0 bg-slate-400 transition-all duration-500 group-hover:w-full z-0"></span>
           </button>
         </div>
       </form>
