@@ -4,7 +4,7 @@ import Title from "./Title";
 
 const Newsletter = () => {
   return (
-    <div className="flex flex-col items-center w-full  lg:w-full rounded-2xl px-4 py-12 md:py-16 mx-2 lg:mx-auto  bg-gray-700 text-white max-w-7xl">
+    <div className="flex flex-col items-center bg-gray-700 text-white max-w-7xl mx-auto h-[300px] rounded-2xl p-8 md:p-12 lg:p-16 my-4">
       <div className="flex flex-col justify-center items-center text-center">
         <Title
           title="Stay Inspired"
