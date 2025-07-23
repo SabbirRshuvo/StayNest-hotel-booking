@@ -3,21 +3,21 @@ import { useNavigate } from "react-router-dom";
 import StarRating from "../components/StarRating";
 import { useState } from "react";
 
-const CheckBox = ({ label, selected = false, onchange = () => {} }) => {
+const CheckBox = ({ label, selected = false, onChange = () => {} }) => {
   return (
     <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
       <input
         className=""
         type="checkbox"
         checked={selected}
-        onchange={(e) => onchange(e.target.checked, label)}
+        onChange={(e) => onChange(e.target.checked, label)}
       />
       <span className="font-light select-none">{label}</span>
     </label>
   );
 };
 
-const RadioButton = ({ label, selected = false, onchange = () => {} }) => {
+const RadioButton = ({ label, selected = false, onChange = () => {} }) => {
   return (
     <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
       <input
@@ -25,7 +25,7 @@ const RadioButton = ({ label, selected = false, onchange = () => {} }) => {
         type="radio"
         name="sortOption"
         checked={selected}
-        onchange={() => onchange(label)}
+        onChange={() => onChange(label)}
       />
       <span className="font-light select-none">{label}</span>
     </label>

@@ -134,7 +134,9 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           src={assets.menuIcon}
           alt="menu"
-          className={`${isScrolled && "invert"} h-4 cursor-pointer`}
+          className={`h-4 cursor-pointer ${
+            !isHome || isScrolled ? "invert" : ""
+          }`}
         />
       </div>
 
@@ -148,7 +150,7 @@ const Navbar = () => {
           className="absolute top-4 right-4 cursor-pointer"
           onClick={() => setIsMenuOpen(false)}
         >
-          <img src={assets.closeIcon} alt="closemenu" className="h-6.5" />
+          <img src={assets.closeIcon} alt="closeMenu" className="h-6.5" />
         </button>
 
         {navLinks.map((link, i) => (

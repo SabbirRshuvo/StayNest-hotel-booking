@@ -20,7 +20,7 @@ const FeatureDestination = () => {
 
       <button
         onClick={() => {
-          navigate("/rooms");
+          navigate("/all-rooms");
           scrollTo(0, 0);
         }}
         className="my-16 px-4 text-sm font-medium border py-1 border-gray-300 rounded  hover:bg-gray-200 transition-all cursor-pointer"

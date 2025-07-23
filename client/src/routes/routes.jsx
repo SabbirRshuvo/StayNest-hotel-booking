@@ -4,6 +4,7 @@ import Home from "../layout/Main/Home";
 import SignUp from "../sheared/SignUp";
 import SignIn from "../sheared/SignIn";
 import AllRooms from "../pages/AllRooms";
+import RoomDetails from "../pages/RoomDetails";
 
 const routes = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const routes = createBrowserRouter([
       {
         path: "/all-rooms",
         element: <AllRooms />,
+      },
+      {
+        path: "/rooms/:id",
+        element: <RoomDetails />,
       },
     ],
   },
