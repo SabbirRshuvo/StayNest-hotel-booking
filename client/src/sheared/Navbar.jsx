@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { assets } from "../assets/assets";
 import AuthContext from "../provider/AuthContext";
-import { MdEmail, MdMarkEmailRead } from "react-icons/md";
 import { MdManageAccounts } from "react-icons/md";
 
 import { MdOutlineCalendarMonth } from "react-icons/md";
@@ -82,13 +81,14 @@ const Navbar = () => {
             />
           </a>
         ))}
-        <button
+        <Link
+          to="/owner"
           className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
             isScrolled || !isHome ? "text-black" : "text-white"
           } transition-all`}
         >
           Dashboard
-        </button>
+        </Link>
       </div>
 
       {/* Desktop Right */}
@@ -203,9 +203,12 @@ const Navbar = () => {
           </a>
         ))}
 
-        <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
+        <Link
+          to="/owner"
+          className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
+        >
           Dashboard
-        </button>
+        </Link>
 
         {/* middle section  */}
         {user ? (
