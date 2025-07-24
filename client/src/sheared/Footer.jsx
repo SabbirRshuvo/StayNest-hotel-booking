@@ -1,5 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { FiArrowRight } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -78,19 +79,17 @@ const Footer = () => {
           <p className="mt-3 text-sm">
             Subscribe to our newsletter for inspiration and special offers.
           </p>
-          <div className="flex items-center mt-4">
+          <div className="relative w-72 mt-4">
             <input
-              type="text"
-              className="bg-white rounded-l border border-gray-300 h-9 px-3 outline-none"
-              placeholder="Your email"
+              type="email"
+              placeholder="Enter your email"
+              className="w-full h-10 pl-4 pr-10 text-sm text-gray-800 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
             />
-            <button className="flex items-center justify-center bg-gray-500  h-9 w-9 aspect-square rounded-r">
-              {/* Arrow icon */}
-              <img
-                src={assets.arrowIcon}
-                alt="arrow-icon"
-                className="text-white"
-              />
+            <button
+              type="submit"
+              className="absolute inset-y-0 right-0 flex items-center justify-center px-3 text-white bg-primary rounded-r-full hover:bg-primary-focus transition-all duration-200"
+            >
+              <FiArrowRight className="w-5 h-5" />
             </button>
           </div>
         </div>
