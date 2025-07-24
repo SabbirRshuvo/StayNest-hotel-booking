@@ -5,6 +5,7 @@ import SignUp from "../sheared/SignUp";
 import SignIn from "../sheared/SignIn";
 import AllRooms from "../pages/AllRooms";
 import RoomDetails from "../pages/RoomDetails";
+import MyBookings from "../pages/MyBookings";
 
 const routes = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const routes = createBrowserRouter([
       {
         path: "/rooms/:id",
         element: <RoomDetails />,
+      },
+      {
+        path: "/my-bookings",
+        element: <MyBookings />,
       },
     ],
   },

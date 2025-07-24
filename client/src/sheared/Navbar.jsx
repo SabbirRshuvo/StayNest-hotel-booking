@@ -2,6 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { assets } from "../assets/assets";
 import AuthContext from "../provider/AuthContext";
+import { MdEmail, MdMarkEmailRead } from "react-icons/md";
+import { MdManageAccounts } from "react-icons/md";
+
+import { MdOutlineCalendarMonth } from "react-icons/md";
+import { FaSignOutAlt } from "react-icons/fa";
+
 const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
@@ -13,7 +19,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logout } = useContext(AuthContext);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +31,6 @@ const Navbar = () => {
   const handleSignOut = async () => {
     try {
       await logout();
-      setOpen(false);
     } catch (error) {
       console.error("logout error", error);
     }
@@ -99,24 +103,58 @@ const Navbar = () => {
         />
 
         {user ? (
-          <div className="relative flex items-center gap-2">
-            <img
-              onClick={() => setOpen(!open)}
-              src={user?.photoURL || "user"}
-              alt="profile"
-              className="w-10 h-10 object-cover rounded-full cursor-pointer"
-            />
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full">
+                <img alt="User-image" src={user.photoURL} />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-64 p-4 shadow-md text-sm space-y-2"
+            >
+              {/* User Info */}
 
-            {open && (
-              <div className="absolute right-0 top-12 rounded bg-white shadow-lg w-36 z-50  ">
+              {/* Divider */}
+              <hr className="border-t border-gray-300 my-2" />
+
+              {/* Settings Link */}
+              <li>
+                <Link
+                  to="/manage-account"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                >
+                  <MdManageAccounts />
+                  Manage Account
+                </Link>
+              </li>
+
+              {/* My Bookings Link */}
+              <li>
+                <Link
+                  to="/my-bookings"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                >
+                  <MdOutlineCalendarMonth />
+                  My Bookings
+                </Link>
+              </li>
+
+              {/* Sign Out Button */}
+              <li>
                 <button
                   onClick={handleSignOut}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 w-full text-left"
                 >
+                  <FaSignOutAlt />
                   Sign Out
                 </button>
-              </div>
-            )}
+              </li>
+            </ul>
           </div>
         ) : (
           <Link
@@ -169,26 +207,60 @@ const Navbar = () => {
           Dashboard
         </button>
 
-        {/* modile section  */}
+        {/* middle section  */}
         {user ? (
-          <div className="relative flex items-center gap-2">
-            <img
-              onClick={() => setOpen(!open)}
-              src={user?.photoURL || "user"}
-              alt="profile"
-              className="w-10 h-10 object-cover rounded-full cursor-pointer"
-            />
+          <div className="dropdown dropdown-center">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full">
+                <img alt="User-image" src={user.photoURL} />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-64 p-4 shadow-md text-sm space-y-2"
+            >
+              {/* User Info */}
 
-            {open && (
-              <div className="absolute right-0 top-12 rounded bg-white shadow-lg w-36 z-50  ">
+              {/* Divider */}
+              <hr className="border-t border-gray-300 my-2" />
+
+              {/* Settings Link */}
+              <li>
+                <Link
+                  to="/manage-account"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                >
+                  <MdManageAccounts />
+                  Manage Account
+                </Link>
+              </li>
+
+              {/* My Bookings Link */}
+              <li>
+                <Link
+                  to="/my-bookings"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                >
+                  <MdOutlineCalendarMonth />
+                  My Bookings
+                </Link>
+              </li>
+
+              {/* Sign Out Button */}
+              <li>
                 <button
                   onClick={handleSignOut}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 w-full text-left"
                 >
+                  <FaSignOutAlt />
                   Sign Out
                 </button>
-              </div>
-            )}
+              </li>
+            </ul>
           </div>
         ) : (
           <Link
