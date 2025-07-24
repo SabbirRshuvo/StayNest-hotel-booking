@@ -159,7 +159,7 @@ const Navbar = () => {
         ) : (
           <Link
             to="/sign-in"
-            className="px-8 py-2.5 rounded-full border border-gray-400 text-gray-800 font-medium ml-4 cursor-pointer hover:bg-gray-100 hover:shadow-md transition duration-300"
+            className="px-8 py-2.5 rounded-full border border-gray-400 text-gray-600 font-medium ml-4 cursor-pointer hover:bg-gray-100 hover:shadow-md transition duration-300"
           >
             Sign In
           </Link>

@@ -1,12 +1,14 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../../sheared/Navbar";
 import Footer from "../../sheared/Footer";
+import HotelReg from "../../components/HotelReg";
 
 const Main = () => {
   const isOwerPath = useLocation().pathname.includes("owner");
   return (
     <div>
       {!isOwerPath && <Navbar />}
+      {isOwerPath && <HotelReg />}
       <div>
         <Outlet />
       </div>

@@ -6,6 +6,10 @@ import SignIn from "../sheared/SignIn";
 import AllRooms from "../pages/AllRooms";
 import RoomDetails from "../pages/RoomDetails";
 import MyBookings from "../pages/MyBookings";
+import HotelLayout from "../layout/HotelOwner/HotelLayout";
+import AddRoom from "../layout/HotelOwner/AddRoom";
+import ListRoom from "../layout/HotelOwner/ListRoom";
+import Dashboard from "../layout/HotelOwner/Dashboard";
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +32,25 @@ const routes = createBrowserRouter([
       {
         path: "/my-bookings",
         element: <MyBookings />,
+      },
+    ],
+  },
+
+  {
+    path: "/owner",
+    element: <HotelLayout />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "add-room",
+        element: <AddRoom />,
+      },
+      {
+        path: "list-room",
+        element: <ListRoom />,
       },
     ],
   },
