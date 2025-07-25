@@ -52,15 +52,11 @@ const MyBookings = () => {
             <div className="flex flex-row md:items-center md:gap-12 mt-3 gap-8">
               <div>
                 <p>Check-In</p>
-                <p className="text-gray-500 text-sm">
-                  {new Date(booking.checkInDate).toDateString}
-                </p>
+                <p className="text-gray-500 text-sm">Date: </p>
               </div>
               <div>
                 <p>Check-Out</p>
-                <p className="text-gray-500 text-sm">
-                  {new Date(booking.checkOutDate).toDateString}
-                </p>
+                <p className="text-gray-500 text-sm">Date:</p>
               </div>
             </div>
             {/* payment status */}

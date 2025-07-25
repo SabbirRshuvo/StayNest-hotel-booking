@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Title from "../../components/Title";
 import { assets, dashboardDummyData } from "../../assets/assets";
+import { FaHotel } from "react-icons/fa6";
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState(dashboardDummyData);
@@ -21,6 +22,7 @@ const Dashboard = () => {
             alt="total-bookings"
             className="max-sm:hidden h-10"
           />
+          {/* <FaHotel className="text-primary max-sm:hidden h-10" /> */}
           <div className="flex flex-col sm:ml-4 font-medium ">
             <p className="text-blue-500 text-lg">Total Bookings</p>
             <p className="text-neutral-400 text-base">
@@ -64,9 +66,7 @@ const Dashboard = () => {
           <tbody className="text-sm">
             {dashboardData.bookings.map((item, index) => (
               <tr key={index}>
-                <td className="py-3 px-4 text-gray-700 border-t border-y-gray-300">
-                  {item.user.username}
-                </td>
+                <td className="py-3 px-4 text-gray-700 border-t border-y-gray-300"></td>
                 <td className="py-3 px-4 text-gray-700 border-t border-y-gray-300 max-sm:hidden">
                   {item.room.roomType}
                 </td>
