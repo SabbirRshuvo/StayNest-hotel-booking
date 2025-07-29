@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
-import { assets } from "../assets/assets";
 import AuthContext from "../provider/AuthContext";
 import { MdManageAccounts } from "react-icons/md";
 
 import { MdOutlineCalendarMonth } from "react-icons/md";
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaSearch, FaSignOutAlt } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
+import { AiOutlineMenuFold } from "react-icons/ai";
+import logo from "../assets/logo.png";
 const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
@@ -50,11 +52,12 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/" className="group inline-block">
         <h2
-          className={`text-xl md:text-2xl ${
-            isScrolled || !isHome ? "text-gray-800" : "text-slate-200"
+          className={`text-xl md:text-2xl flex items-center ${
+            isScrolled || !isHome ? "text-gray-800" : "text-slate-200  "
           } relative pb-1`}
         >
-          StayNest
+          <img src={logo} alt="logo" className="h-7 w-7 " />
+
           <span
             className={`block h-[2px] w-0 ${
               isScrolled || !isHome ? "bg-slate-700" : "bg-white"
@@ -69,7 +72,7 @@ const Navbar = () => {
           <a
             key={i}
             href={link.path}
-            className={`group flex flex-col gap-0.5 ${
+            className={`group flex flex-col gap-0.5  ${
               isScrolled || !isHome ? "text-gray-700" : "text-white"
             }`}
           >
@@ -81,26 +84,13 @@ const Navbar = () => {
             />
           </a>
         ))}
-        <Link
-          to="/owner"
-          className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
-            isScrolled || !isHome ? "text-black" : "text-white"
-          } transition-all`}
-        >
-          Dashboard
-        </Link>
       </div>
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
-        <img
-          src={assets.searchIcon}
-          alt="search"
-          className={`h-7 transition-all duration-500 cursor-pointer 
-    ${isScrolled && isHome && "invert"} 
-    ${!isHome && "invert"} 
-  `}
-        />
+        <div className={`${isScrolled ? "text-black" : "text-white"}`}>
+          <FaSearch />
+        </div>
 
         {user ? (
           <div className="dropdown dropdown-end">
@@ -170,14 +160,13 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <div className="flex items-center gap-3 md:hidden">
-        <img
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          src={assets.menuIcon}
-          alt="menu"
-          className={`h-4 cursor-pointer ${
-            !isHome || isScrolled ? "invert" : ""
-          }`}
-        />
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <AiOutlineMenuFold
+            className={`invert text-2xl font-semibold cursor-pointer ${
+              isScrolled ? "text-white" : "text-black"
+            }`}
+          />
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -190,7 +179,7 @@ const Navbar = () => {
           className="absolute top-4 right-4 cursor-pointer"
           onClick={() => setIsMenuOpen(false)}
         >
-          <img src={assets.closeIcon} alt="closeMenu" className="h-6.5" />
+          <IoMdClose className="text-4xl font-semibold" />
         </button>
 
         {navLinks.map((link, i) => (
@@ -204,13 +193,6 @@ const Navbar = () => {
             <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-amber-500 transition-all duration-500 group-hover:w-full"></span>
           </a>
         ))}
-
-        <Link
-          to="/owner"
-          className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
-        >
-          Dashboard
-        </Link>
 
         {/* middle section  */}
         {user ? (
@@ -270,12 +252,11 @@ const Navbar = () => {
         ) : (
           <Link
             to="/sign-in"
-            className="relative overflow-hidden group px-8 py-1 rounded-full border border-black font-semibold  cursor-pointer"
+            className={`px-6 sm:px-8 py-2.5 rounded-full border border-gray-400 font-medium ml-4 cursor-pointer transition duration-300 hover:bg-gray-600 hover:text-white hover:shadow-md ${
+              isScrolled ? "text-black" : "text-black"
+            }`}
           >
-            <span className="relative z-10 transition duration-300 group-hover:text-gray-200 ">
-              Sign In
-            </span>
-            <span className="absolute left-0 top-0 h-full w-0 bg-black   transition-all duration-500 group-hover:w-full z-0"></span>
+            Sign In
           </Link>
         )}
       </div>
