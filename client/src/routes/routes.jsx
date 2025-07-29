@@ -10,6 +10,8 @@ import HotelLayout from "../layout/HotelOwner/HotelLayout";
 import AddRoom from "../layout/HotelOwner/AddRoom";
 import ListRoom from "../layout/HotelOwner/ListRoom";
 import Dashboard from "../layout/HotelOwner/Dashboard";
+import Contact from "../pages/Contact";
+import About from "../pages/About";
 
 const routes = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const routes = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/all-rooms",

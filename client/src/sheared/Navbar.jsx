@@ -13,8 +13,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Hotels", path: "/all-rooms" },
-    { name: "Contact", path: "/" },
-    { name: "About", path: "/" },
+    { name: "Contact", path: "/contact" },
+    { name: "About", path: "/about" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,7 +59,9 @@ const Navbar = () => {
           <img
             src={logo}
             alt="logo"
-            className={`h-7 w-7  ${isScrolled ? "invert-0" : "invert"}`}
+            className={`h-7 w-7  ${isScrolled ? "invert-0" : "invert"} ${
+              !isHome ? "invert-0" : "invert"
+            }`}
           />
 
           <span
@@ -92,7 +94,11 @@ const Navbar = () => {
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4 gap-x-8 cursor-pointer">
-        <div className={`${isScrolled ? "text-black " : "text-white invert"}`}>
+        <div
+          className={`${isScrolled ? "text-black " : "text-white  "} ${
+            !isScrolled && !isHome ? "invert" : "invert-0"
+          }`}
+        >
           <FaSearch />
         </div>
 
@@ -175,9 +181,7 @@ const Navbar = () => {
       <div className="flex items-center gap-3 md:hidden">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <AiOutlineMenuFold
-            className={`invert text-2xl font-semibold cursor-pointer ${
-              isScrolled ? "text-white" : "text-black"
-            }`}
+            className={` text-2xl font-semibold cursor-pointer `}
           />
         </button>
       </div>
@@ -224,7 +228,15 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-64 p-4 shadow-md text-sm space-y-2"
             >
               {/* User Info */}
-
+              <li>
+                <Link
+                  to="/dashboard"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
+                >
+                  <MdDashboard />
+                  Dashboard
+                </Link>
+              </li>
               {/* Divider */}
               <hr className="border-t border-gray-300 my-2" />
 
@@ -232,7 +244,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/manage-account"
-                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1  text-sm"
                 >
                   <MdManageAccounts />
                   Manage Account
@@ -243,7 +255,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/my-bookings"
-                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1  text-sm"
                 >
                   <MdOutlineCalendarMonth />
                   My Bookings
@@ -254,7 +266,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={handleSignOut}
-                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 w-full text-left"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 w-full text-left  text-sm"
                 >
                   <FaSignOutAlt />
                   Sign Out

@@ -6,22 +6,22 @@ import { Fade } from "react-awesome-reveal";
 const ChooseUs = () => {
   const features = [
     {
-      icon: <FaHotel size={40} className="text-primary" />,
+      icon: <FaHotel size={40} className="text-sky-600" />,
       title: "Luxury Accommodations",
       desc: "Our hotels offer premium rooms with top-class facilities and comfort.",
     },
     {
-      icon: <FaConciergeBell size={40} className="text-primary" />,
+      icon: <FaConciergeBell size={40} className="text-green-600" />,
       title: "24/7 Customer Service",
       desc: "Round-the-clock service to ensure a smooth and memorable stay.",
     },
     {
-      icon: <FaShieldAlt size={40} className="text-primary" />,
+      icon: <FaShieldAlt size={40} className="text-red-400" />,
       title: "Secure Booking",
       desc: "Your payments and personal data are protected with top-level security.",
     },
     {
-      icon: <MdLocationOn size={40} className="text-primary" />,
+      icon: <MdLocationOn size={40} className="text-orange-500" />,
       title: "Top Destinations",
       desc: "We offer stays in the world’s most popular and scenic destinations.",
     },
@@ -30,7 +30,7 @@ const ChooseUs = () => {
     <div className="bg-base-100 py-16 px-4 md:px-10 lg:px-24">
       <div className="text-center mb-12 max-w-2xl mx-auto">
         <Fade direction="up" triggerOnce>
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-content mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Why Choose Us
           </h2>
           <p className="text-gray-500 text-sm md:text-base">

@@ -1,30 +1,42 @@
-import React from "react";
-import { assets } from "../../assets/assets";
 import { NavLink } from "react-router";
+
+import { FiHome, FiPlusSquare, FiList } from "react-icons/fi";
 
 const Sidebar = () => {
   const sidebarLinks = [
-    { name: "Dashboard", path: "/owner", icon: assets.dashboardIcon },
-    { name: "Add Room", path: "/owner/add-room", icon: assets.addIcon },
-    { name: "List Room", path: "/owner/list-room", icon: assets.listIcon },
+    {
+      name: "Dashboard",
+      path: "/dashboard",
+      icon: <FiHome className="text-lg" />,
+    },
+    {
+      name: "Add Room",
+      path: "/dashboard/add-room",
+      icon: <FiPlusSquare className="text-lg" />,
+    },
+    {
+      name: "List Room",
+      path: "/dashboard/list-room",
+      icon: <FiList className="text-lg" />,
+    },
   ];
   return (
     <div className="md:w-64 w-16 border-r h-full text-base border-gray-300 pt-4 flex flex-col transition-all duration-300">
-      {sidebarLinks.map((item, index) => (
+      {sidebarLinks.map((link) => (
         <NavLink
-          to={item.path}
-          key={index}
-          end="/owner"
+          to={link.path}
+          key={link.name}
+          end="/dashboard"
           className={({ isActive }) =>
             `flex items-center py-3 px-4 md:px-8 gap-3 ${
               isActive
-                ? "border-r-4 md:border-r-[6px] bg-blue-600/10 border-blue-600 text-blue-600"
+                ? "border-r-2 md:border-r-[6px] bg-blue-600/10 border-orange-400 text-orange-500"
                 : "hover:bg-gray-100/90 border-white text-gray-700"
             }`
           }
         >
-          <img src={item.icon} alt={item.name} className="min-h-6 min-w-6" />
-          <p className="md:block hidden text-center">{item.name}</p>
+          {link.icon}
+          <p className="md:block hidden text-center">{link.name}</p>
         </NavLink>
       ))}
     </div>
