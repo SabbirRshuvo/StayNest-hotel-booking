@@ -37,7 +37,7 @@ const routes = createBrowserRouter([
   },
 
   {
-    path: "/owner",
+    path: "/dashboard",
     element: <HotelLayout />,
     children: [
       {

@@ -1,6 +1,5 @@
-import React from "react";
-import { assets } from "../assets/assets";
 import { FiArrowRight } from "react-icons/fi";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -14,21 +13,13 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-3 mt-4">
             {/* Instagram */}
-            <img
-              src={assets.instagramIcon}
-              alt="instagramIcon"
-              className="w-6"
-            />
+            <FaInstagram className="w-8 h-8 text-pink-500 cursor-pointer" />
             {/* Facebook */}
-            <img
-              src={assets.facebookIcon}
-              alt="facebookIcon"
-              className="w-6 "
-            />
+            <FaFacebook className="w-8 h-8 text-blue-600 cursor-pointer" />
             {/* Twitter */}
-            <img src={assets.twitterIcon} alt="twitterIcon" className="w-6" />
+            <FaTwitter className="w-8 h-8 text-blue-400 cursor-pointer" />
             {/* LinkedIn */}
-            <img src={assets.linkendinIcon} alt="" className="w-6" />
+            <FaLinkedin className="w-8 h-8 text-blue-700 cursor-pointer" />
           </div>
         </div>
 

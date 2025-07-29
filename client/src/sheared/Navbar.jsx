@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import AuthContext from "../provider/AuthContext";
-import { MdManageAccounts } from "react-icons/md";
+import { MdDashboard, MdManageAccounts } from "react-icons/md";
 
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import { FaSearch, FaSignOutAlt } from "react-icons/fa";
@@ -13,7 +13,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Hotels", path: "/all-rooms" },
-    { name: "Experience", path: "/" },
+    { name: "Contact", path: "/" },
     { name: "About", path: "/" },
   ];
 
@@ -51,19 +51,23 @@ const Navbar = () => {
     >
       {/* Logo */}
       <Link to="/" className="group inline-block">
-        <h2
+        <div
           className={`text-xl md:text-2xl flex items-center ${
             isScrolled || !isHome ? "text-gray-800" : "text-slate-200  "
           } relative pb-1`}
         >
-          <img src={logo} alt="logo" className="h-7 w-7 " />
+          <img
+            src={logo}
+            alt="logo"
+            className={`h-7 w-7  ${isScrolled ? "invert-0" : "invert"}`}
+          />
 
           <span
             className={`block h-[2px] w-0 ${
               isScrolled || !isHome ? "bg-slate-700" : "bg-white"
             } transition-all duration-300 group-hover:w-full absolute bottom-0 left-0`}
           ></span>
-        </h2>
+        </div>
       </Link>
 
       {/* Desktop Nav */}
@@ -87,8 +91,8 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Right */}
-      <div className="hidden md:flex items-center gap-4">
-        <div className={`${isScrolled ? "text-black" : "text-white"}`}>
+      <div className="hidden md:flex items-center gap-4 gap-x-8 cursor-pointer">
+        <div className={`${isScrolled ? "text-black " : "text-white invert"}`}>
           <FaSearch />
         </div>
 
@@ -108,6 +112,15 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-64 p-4 shadow-md text-sm space-y-2"
             >
               {/* User Info */}
+              <li>
+                <Link
+                  to="/dashboard"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
+                >
+                  <MdDashboard />
+                  Dashboard
+                </Link>
+              </li>
 
               {/* Divider */}
               <hr className="border-t border-gray-300 my-2" />
@@ -116,7 +129,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/manage-account"
-                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
                 >
                   <MdManageAccounts />
                   Manage Account
@@ -127,7 +140,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/my-bookings"
-                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
                 >
                   <MdOutlineCalendarMonth />
                   My Bookings
@@ -138,7 +151,7 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={handleSignOut}
-                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 w-full text-left"
+                  className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 w-full text-left text-sm"
                 >
                   <FaSignOutAlt />
                   Sign Out
