@@ -1,61 +1,83 @@
-import React from "react";
-import { FaConciergeBell, FaHotel, FaShieldAlt } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
-import { Fade } from "react-awesome-reveal";
+import {
+  FaGlobe,
+  FaBook,
+  FaGem,
+  FaUserShield,
+  FaLanguage,
+  FaCode,
+  FaCogs,
+  FaRegClock,
+} from "react-icons/fa";
 
 const ChooseUs = () => {
   const features = [
     {
-      icon: <FaHotel size={40} className="text-sky-600" />,
-      title: "Luxury Accommodations",
-      desc: "Our hotels offer premium rooms with top-class facilities and comfort.",
+      icon: <FaRegClock size={30} />,
+      title: "Lifetime Updates",
+      desc: "Get free continuous updates for life. We'll continue to update the theme to pursue higher standards.",
     },
     {
-      icon: <FaConciergeBell size={40} className="text-green-600" />,
-      title: "24/7 Customer Service",
-      desc: "Round-the-clock service to ensure a smooth and memorable stay.",
+      icon: <FaLanguage size={30} />,
+      title: "Multilingual Support",
+      desc: "Translation & RTL Ready. WPML & Polylang compatible. Helps create multilingual sites.",
     },
     {
-      icon: <FaShieldAlt size={40} className="text-red-400" />,
-      title: "Secure Booking",
-      desc: "Your payments and personal data are protected with top-level security.",
+      icon: <FaCode size={30} />,
+      title: "Performance Optimized",
+      desc: "Optimized page speed and performance with good structure and well-written code.",
     },
     {
-      icon: <MdLocationOn size={40} className="text-orange-500" />,
-      title: "Top Destinations",
-      desc: "We offer stays in the world’s most popular and scenic destinations.",
+      icon: <FaCogs size={30} />,
+      title: "Drag & Drop Editor",
+      desc: "Fast, flexible, easy to use. Build with Elementor, and including 33+ widgets.",
+    },
+    {
+      icon: <FaBook size={30} />,
+      title: "Detailed Documentation",
+      desc: "Well-written detailed documentation to help create a hotel site using the theme.",
+    },
+    {
+      icon: <FaGlobe size={30} />,
+      title: "Responsive Design",
+      desc: "Adapts to different screen sizes to maintain usability and appearance on all devices.",
+    },
+    {
+      icon: <FaGem size={30} />,
+      title: "Lifetime License",
+      desc: "One-time fees. No subscription. No hidden fees or additional purchases.",
+    },
+    {
+      icon: <FaUserShield size={30} />,
+      title: "Active Elite Author",
+      desc: "More than 70,000 users. High-quality and functional products.",
     },
   ];
   return (
-    <div className="bg-base-100 py-16 px-4 md:px-10 lg:px-24">
-      <div className="text-center mb-12 max-w-2xl mx-auto">
-        <Fade direction="up" triggerOnce>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Why Choose Us
-          </h2>
-          <p className="text-gray-500 text-sm md:text-base">
-            Discover what makes our hotel booking platform different from the
-            rest.
-          </p>
-        </Fade>
-      </div>
+    <section className="py-16 px-4 bg-white text-neutral">
+      <div className="max-w-7xl mx-auto text-center">
+        <h4 className="uppercase text-sm font-semibold text-gray-500 mb-2">
+          Why Choose The Theme
+        </h4>
+        <h2 className="text-4xl font-serif font-bold mb-6">
+          Build a Flexible & Robust Hotel
+          <br />
+          Website with Top-notch Features
+        </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {features.map((feature, index) => (
-          <Fade direction="up" triggerOnce delay={index * 100} key={index}>
-            <div className="card bg-white text-neutral shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="card-body items-center text-center">
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="card-title text-lg font-semibold mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-500 text-sm">{feature.desc}</p>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          {features.map((f, i) => (
+            <div
+              key={i}
+              className="bg-neutral-50 p-6 rounded-md shadow-sm text-left"
+            >
+              <div className="text-yellow-900 mb-4">{f.icon}</div>
+              <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
+              <p className="text-sm text-gray-600">{f.desc}</p>
             </div>
-          </Fade>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -10,7 +10,7 @@ const Banner = () => {
     <div className="flex flex-col items-start justify-center px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url('../src/assets/heroIcon1.jpg')] bg-no-repeat bg-cover bg-center min-h-screen   ">
       {/* Top text */}
       <div className="flex flex-col items-start justify-center max-w-3xl mt-16">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl md:text-[56px] font-bold md:font-extrabold mb-5">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl md:text-[56px] font-bold md:font-extrabold mb-5 ">
           Welcome to StayNest{" "}
         </h1>
       </div>
