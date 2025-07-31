@@ -29,22 +29,22 @@ const ChooseUs = () => {
     {
       icon: <FaCogs size={40} />,
       title: "Drag & Drop Editor",
-      desc: "Fast, flexible, easy to use. Build with Elementor, and including 33+ widgets.",
+      desc: "Fast, flexible, easy to use. Build with Elementor, and including 33+ widgets and 10+ templates. including 10+ templates.",
     },
     {
       icon: <FaBook size={40} />,
       title: "Detailed Documentation",
-      desc: "Well-written detailed documentation to help create a hotel site using the theme.",
+      desc: "Well-written detailed documentation to help create a hotel site using the theme. Includes video tutorials. ",
     },
     {
       icon: <FaGlobe size={40} />,
       title: "Responsive Design",
-      desc: "Adapts to different screen sizes to maintain usability and appearance on all devices.",
+      desc: "Adapts to different screen sizes to maintain usability and appearance on all devices. Tested on all major browsers.",
     },
     {
       icon: <FaGem size={40} />,
       title: "Lifetime License",
-      desc: "One-time fees. No subscription. No hidden fees or additional purchases.",
+      desc: "One-time fees. No subscription. No hidden fees or additional purchases. buy once, use forever.",
     },
     {
       icon: <FaUserShield size={40} />,
@@ -53,7 +53,7 @@ const ChooseUs = () => {
     },
   ];
   return (
-    <section className="py-16 px-4 bg-white text-neutral ">
+    <section className="py-16 px-6 bg-white text-neutral ">
       <div className="max-w-7xl mx-auto text-center  ">
         <h4 className="uppercase text-sm font-semibold text-gray-500 mb-2">
           Why Choose The Theme
@@ -72,7 +72,7 @@ const ChooseUs = () => {
             >
               <div className="text-yellow-900 mb-4">{f.icon}</div>
               <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
-              <p className="text-sm text-gray-600">{f.desc}</p>
+              <p className="text-md text-gray-600">{f.desc}</p>
             </div>
           ))}
         </div>

@@ -3,7 +3,6 @@ import Main from "../layout/Main/Main";
 import Home from "../layout/Main/Home";
 import SignUp from "../sheared/SignUp";
 import SignIn from "../sheared/SignIn";
-import AllRooms from "../pages/AllRooms";
 import RoomDetails from "../pages/RoomDetails";
 import MyBookings from "../pages/MyBookings";
 import HotelLayout from "../layout/HotelOwner/HotelLayout";
@@ -30,10 +29,6 @@ const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-      },
-      {
-        path: "/all-rooms",
-        element: <AllRooms />,
       },
       {
         path: "/rooms/:id",
