@@ -8,49 +8,8 @@ const About = () => {
   return (
     <div className="px-4 md:px-20 py-10 space-y-16 text-gray-800 my-20 ">
       {/* About Us Section */}
-      <section className="text-center">
-        <Fade cascade>
-          <h2 className="text-3xl md:text-4xl font-bold  mb-4 text-sky-600">
-            About Us
-          </h2>
-          <p className="max-w-3xl mx-auto text-lg">
-            Welcome to StayNest – your gateway to premium hotel experiences. We
-            offer seamless hotel booking with exclusive deals and top-rated
-            destinations.
-          </p>
-        </Fade>
-      </section>
 
       {/* Mission & Vision Section with Cards */}
-      <section>
-        <h2 className="text-3xl font-semibold text-center mb-8 ">
-          Our Mission & Vision
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Slide direction="left">
-            <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition">
-              <FaBullseye className="text-5xl text-sky-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Our Mission</h3>
-              <p>
-                Making hotel booking effortless, affordable, and accessible to
-                all with innovative technology and customer satisfaction at the
-                heart.
-              </p>
-            </div>
-          </Slide>
-          <Slide direction="right">
-            <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition">
-              <FaGlobe className="text-5xl text-orange-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Our Vision</h3>
-              <p>
-                To become the world’s most trusted hotel booking platform by
-                offering personalized experiences and building a global travel
-                community.
-              </p>
-            </div>
-          </Slide>
-        </div>
-      </section>
 
       {/* Our Journey - Timeline or Swiper */}
       <section>
