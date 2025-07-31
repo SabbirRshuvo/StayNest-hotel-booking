@@ -2,7 +2,7 @@ import React from "react";
 import { FaMagic, FaTools, FaRocket } from "react-icons/fa";
 import image1 from "../assets/regImage.png";
 import image2 from "../assets/exclusiveOfferCardImg1.png";
-const HotelDemon = () => {
+const HotelDemand = () => {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center text-white text-center">
       {/* Background Image */}
@@ -59,4 +59,4 @@ const HotelDemon = () => {
   );
 };
 
-export default HotelDemon;
+export default HotelDemand;

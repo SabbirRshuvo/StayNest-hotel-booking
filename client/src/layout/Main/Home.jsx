@@ -3,7 +3,7 @@ import BookingCapacity from "../../components/BookingCapacity";
 import ChooseUs from "../../components/ChooseUs";
 import FAQ from "../../components/FAQ";
 import FeatureSection from "../../components/FeatureSection";
-import HotelDemon from "../../components/HotelDemon";
+import HotelDemand from "../../components/HotelDemand";
 import HotelPreview from "../../components/HotelPreview";
 import RoomReservation from "../../components/RoomReservation";
 import Synchronization from "../../components/Synchronization";
@@ -25,7 +25,7 @@ const Home = () => {
         <HotelPreview />
       </FadeInLoad>
       <FadeInLoad delay={0.6}>
-        <HotelDemon />
+        <HotelDemand />
       </FadeInLoad>
       <FadeInLoad delay={0.8}>
         <WebsiteBuilder />

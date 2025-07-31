@@ -206,7 +206,7 @@ const Navbar = () => {
             key={i}
             href={link.path}
             onClick={() => setIsMenuOpen(false)}
-            className="group inline-block relative pb-1 text-base font-medium transition duration-300 text-gray-700 hover:text-gray-500"
+            className="group inline-block relative pb-1 text-xl font-medium transition duration-300 text-gray-700 hover:text-gray-500"
           >
             {link.name}
             <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-amber-500 transition-all duration-500 group-hover:w-full"></span>
@@ -221,13 +221,13 @@ const Navbar = () => {
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <div className="w-10 rounded-full">
+              <div className="w-24  rounded-full">
                 <img alt="User-image" src={user.photoURL} />
               </div>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-64 p-4 shadow-md text-sm space-y-2"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-64 p-4 shadow-md text-md space-y-2"
             >
               {/* User Info */}
               <li>
