@@ -52,7 +52,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/" className="group inline-block">
         <div
-          className={`text-xl md:text-2xl flex items-center ${
+          className={`text-xl md:text-2xl flex items-center gap-2 ${
             isScrolled || !isHome ? "text-gray-800" : "text-slate-200  "
           } relative pb-1`}
         >
@@ -63,7 +63,7 @@ const Navbar = () => {
               !isHome ? "invert-0" : "invert"
             }`}
           />
-
+          StayNest
           <span
             className={`block h-[2px] w-0 ${
               isScrolled || !isHome ? "bg-slate-700" : "bg-white"
@@ -181,7 +181,9 @@ const Navbar = () => {
       <div className="flex items-center gap-3 md:hidden">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <AiOutlineMenuFold
-            className={` text-2xl font-semibold cursor-pointer `}
+            className={` text-2xl font-semibold cursor-pointer ${
+              isScrolled || !isHome ? "text-gray-800" : "text-white"
+            }`}
           />
         </button>
       </div>

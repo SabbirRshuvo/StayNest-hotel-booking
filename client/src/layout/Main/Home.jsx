@@ -1,6 +1,7 @@
 import Banner from "../../components/Banner";
 import ChooseUs from "../../components/ChooseUs";
 import ExclusiveOffer from "../../components/ExclusiveOffer";
+import FAQ from "../../components/FAQ";
 import FeatureDestination from "../../components/FeatureDestination";
 import FeatureSection from "../../components/FeatureSection";
 import HotelDemon from "../../components/HotelDemon";
@@ -23,6 +24,7 @@ const Home = () => {
       <RoomReservation />
       <ChooseUs />
       <TemplateGallery />
+      <FAQ />
       {/* <ExclusiveOffer /> */}
       <Testimonials />
     </div>

@@ -1,17 +1,11 @@
 /* eslint-disable no-unused-vars */
-import {
-  FaBed,
-  FaBath,
-  FaUsers,
-  FaSearch,
-  FaCalendarAlt,
-  FaCheckCircle,
-} from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaUsers, FaStar, FaHotel, FaCheckCircle } from "react-icons/fa";
 
 import image1 from "../assets/Reservation/reservation1.jpg";
 import image2 from "../assets/Reservation/reservation2.jpg";
 import image3 from "../assets/Reservation/reservation3.jpg";
+
 import image4 from "../assets/Reservation/reservation4.jpg";
 import image5 from "../assets/Reservation/reservation5.jpg";
 import image6 from "../assets/Reservation/reservation6.jpg";
@@ -24,10 +18,10 @@ const cards = [
     title: "Room Management",
     img: image1,
     bullets: [
-      "Manage all rooms in dashboard",
+      "   Manage all rooms in dashboard",
       "Clear and well-grouped options",
       "Room Availability Management",
-      "Room Details: Images, Prices, Amenities",
+      "Room Details: Images & Galleries, Amenities",
     ],
   },
   {
@@ -35,18 +29,18 @@ const cards = [
     img: image2,
     bullets: [
       "Theme Built-in Booking Form",
-      "Checkout & manage orders",
-      "Room Booking details overview",
-      "Discount Coupons in WooCommerce",
+      "Checkout & manage orders with WooCommerce",
+      "Order with room booking details",
+      "Set Discount Coupons in WooCommerce",
     ],
   },
   {
     title: "Room Search & Filter",
     img: image3,
     bullets: [
-      "Check-in & checkout date filter",
-      "5 Search Form Style options",
-      "Responsive and Mobile-Friendly",
+      "  Search with check-in & checkout date, and number of guests",
+      "5 Search Form Styles with Design Options",
+      "Responsive and Mobile-Friendly Design",
     ],
   },
   {
@@ -55,34 +49,37 @@ const cards = [
     bullets: [
       "Book multiple rooms in one go",
       "Flexible occupancy setup",
+      "Set minimum and maximum guests per room",
       "Manage inventory per room",
     ],
   },
   {
-    title: "Integrated Payments",
+    title: "Pool of Rooms",
     img: image5,
     bullets: [
-      "Stripe, PayPal, Card Supported",
-      "Secure payment flow",
-      "Auto-payment confirmations",
+      "  Create pools of rooms for special offers",
+      "Group rooms by type or features",
+      "Easily manage and update pool availability",
     ],
   },
   {
-    title: "Live Availability",
+    title: "Double Rooms",
     img: image6,
     bullets: [
-      "Sync availability in real-time",
-      "Prevent overbooking",
-      "Custom calendar view",
+      "  Create special double room offers",
+      "Set unique pricing and availability",
+      "Highlight special amenities for double rooms",
+      "Flexible booking options for couples or families",
     ],
   },
   {
-    title: "Custom Pricing",
+    title: "Island Hotel",
     img: image7,
     bullets: [
-      "Seasonal rates and weekend pricing",
-      "Coupon support",
-      "Pricing by guests or duration",
+      "  Create unique island hotel experiences",
+      "Customizable island-themed booking options",
+      "Special amenities and services for island stays",
+      "Flexible pricing for island rooms",
     ],
   },
   {
@@ -95,12 +92,13 @@ const cards = [
     ],
   },
   {
-    title: "Analytics Dashboard",
+    title: "Awesome Views",
     img: image9,
     bullets: [
-      "Track bookings & revenue",
-      "Most viewed rooms",
-      "Conversion reports",
+      "  Showcase stunning views from rooms",
+      "Highlight unique room features",
+      "Use high-quality images for better engagement",
+      "Attract guests with picturesque room settings",
     ],
   },
 ];
@@ -122,7 +120,7 @@ const RoomReservation = () => {
       <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto">
         {cards.map((card, idx) => (
           <motion.div
-            whileHover={{ scale: 1.03 }}
+            // whileHover={{ scale: 1.03 }}
             key={idx}
             className="bg-[#29412a] rounded-lg overflow-hidden shadow-lg flex flex-col"
           >

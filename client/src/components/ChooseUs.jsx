@@ -12,49 +12,49 @@ import {
 const ChooseUs = () => {
   const features = [
     {
-      icon: <FaRegClock size={30} />,
+      icon: <FaRegClock size={40} />,
       title: "Lifetime Updates",
-      desc: "Get free continuous updates for life. We'll continue to update the theme to pursue higher standards.",
+      desc: "Get free continuous updates for life. We will continue to update the theme to pursue higher standards.",
     },
     {
-      icon: <FaLanguage size={30} />,
+      icon: <FaLanguage size={40} />,
       title: "Multilingual Support",
-      desc: "Translation & RTL Ready. WPML & Polylang compatible. Helps create multilingual sites.",
+      desc: "Translation & RTL Ready. WPML & Polylang compatible. To help you create a multilingual website.",
     },
     {
-      icon: <FaCode size={30} />,
+      icon: <FaCode size={40} />,
       title: "Performance Optimized",
       desc: "Optimized page speed and performance with good structure and well-written code.",
     },
     {
-      icon: <FaCogs size={30} />,
+      icon: <FaCogs size={40} />,
       title: "Drag & Drop Editor",
       desc: "Fast, flexible, easy to use. Build with Elementor, and including 33+ widgets.",
     },
     {
-      icon: <FaBook size={30} />,
+      icon: <FaBook size={40} />,
       title: "Detailed Documentation",
       desc: "Well-written detailed documentation to help create a hotel site using the theme.",
     },
     {
-      icon: <FaGlobe size={30} />,
+      icon: <FaGlobe size={40} />,
       title: "Responsive Design",
       desc: "Adapts to different screen sizes to maintain usability and appearance on all devices.",
     },
     {
-      icon: <FaGem size={30} />,
+      icon: <FaGem size={40} />,
       title: "Lifetime License",
       desc: "One-time fees. No subscription. No hidden fees or additional purchases.",
     },
     {
-      icon: <FaUserShield size={30} />,
+      icon: <FaUserShield size={40} />,
       title: "Active Elite Author",
-      desc: "More than 70,000 users. High-quality and functional products.",
+      desc: "Choice of more than 70,000 users. We make beautiful and functional products with high standards of quality.",
     },
   ];
   return (
-    <section className="py-16 px-4 bg-white text-neutral">
-      <div className="max-w-7xl mx-auto text-center">
+    <section className="py-16 px-4 bg-white text-neutral ">
+      <div className="max-w-7xl mx-auto text-center  ">
         <h4 className="uppercase text-sm font-semibold text-gray-500 mb-2">
           Why Choose The Theme
         </h4>
@@ -64,11 +64,11 @@ const ChooseUs = () => {
           Website with Top-notch Features
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 ">
           {features.map((f, i) => (
             <div
               key={i}
-              className="bg-neutral-50 p-6 rounded-md shadow-sm text-left"
+              className="bg-neutral-50 p-6 rounded-md shadow-sm text-left transition-transform duration-300 hover:scale-105"
             >
               <div className="text-yellow-900 mb-4">{f.icon}</div>
               <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
