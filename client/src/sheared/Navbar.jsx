@@ -12,7 +12,7 @@ import logo from "../assets/logo.png";
 const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Hotels", path: "/all-rooms" },
+    { name: "Hotels", path: "/rooms" },
     { name: "Contact", path: "/contact" },
     { name: "About", path: "/about" },
   ];
@@ -53,7 +53,7 @@ const Navbar = () => {
       <Link to="/" className="group inline-block">
         <div
           className={`text-xl md:text-2xl flex items-center gap-2 ${
-            isScrolled || !isHome ? "text-gray-800" : "text-slate-200  "
+            isScrolled || !isHome ? "text-gray-800" : "text-white  "
           } relative pb-1`}
         >
           <img
@@ -169,8 +169,8 @@ const Navbar = () => {
           <Link
             to="/sign-in"
             className={`px-6 sm:px-8 py-2.5 rounded-full border border-gray-400 font-medium ml-4 cursor-pointer transition duration-300 hover:bg-white hover:text-black hover:shadow-md ${
-              isScrolled ? "text-black" : "text-white"
-            }`}
+              isScrolled && isHome ? "text-black" : "text-white"
+            } ${!isHome ? "invert " : "invert-0"}`}
           >
             Sign In
           </Link>
@@ -281,7 +281,7 @@ const Navbar = () => {
             to="/sign-in"
             className={`px-6 sm:px-8 py-2.5 rounded-full border border-gray-400 font-medium ml-4 cursor-pointer transition duration-300 hover:bg-gray-600 hover:text-white hover:shadow-md ${
               isScrolled ? "text-black" : "text-black"
-            }`}
+            } `}
           >
             Sign In
           </Link>

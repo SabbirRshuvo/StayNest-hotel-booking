@@ -1,168 +1,213 @@
-import { assets, facilityIcons, roomsDummyData } from "../assets/assets";
-import { useNavigate } from "react-router-dom";
-import StarRating from "../components/StarRating";
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import { motion } from "framer-motion";
+import {
+  FaStar,
+  FaMapMarkerAlt,
+  FaWifi,
+  FaSwimmingPool,
+  FaConciergeBell,
+} from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
 
-const CheckBox = ({ label, selected = false, onChange = () => {} }) => {
-  return (
-    <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
-      <input
-        className=""
-        type="checkbox"
-        checked={selected}
-        onChange={(e) => onChange(e.target.checked, label)}
-      />
-      <span className="font-light select-none">{label}</span>
-    </label>
-  );
-};
-
-const RadioButton = ({ label, selected = false, onChange = () => {} }) => {
-  return (
-    <label className="flex gap-3 items-center cursor-pointer mt-2 text-sm">
-      <input
-        className=""
-        type="radio"
-        name="sortOption"
-        checked={selected}
-        onChange={() => onChange(label)}
-      />
-      <span className="font-light select-none">{label}</span>
-    </label>
-  );
-};
+const hotelsData = [
+  {
+    id: 1,
+    name: "Ocean Breeze Resort",
+    location: "Cox's Bazar",
+    rating: 4.7,
+    price: 130,
+    type: "Beach",
+    facilities: ["Free Wi-Fi", "Swimming Pool", "Concierge"],
+    image: "https://i.ibb.co/CKP1WQyK/nathan-cima-4aq-H2ut-APAs-unsplash.jpg",
+  },
+  {
+    id: 2,
+    name: "Mountain View Lodge",
+    location: "Bandarban",
+    rating: 4.8,
+    price: 110,
+    type: "Mountain",
+    facilities: ["Free Wi-Fi", "Concierge"],
+    image:
+      "https://i.ibb.co/hxrgW0ys/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpghttps://source.unsplash.com/400x300/?mountain,hotel",
+  },
+  {
+    id: 3,
+    name: "Cityscape Apartments",
+    location: "Dhaka",
+    rating: 4.5,
+    price: 90,
+    type: "CityApart",
+    facilities: ["Free Wi-Fi"],
+    image: "https://i.ibb.co/YTD27Pxf/visualsofdana-T5p-L6ci-En-I-unsplash.jpg",
+  },
+  {
+    id: 4,
+    name: "Luxury Palace Hotel",
+    location: "Dhaka",
+    rating: 4.9,
+    price: 180,
+    type: "Luxury",
+    facilities: ["Free Wi-Fi", "Swimming Pool", "Concierge"],
+    image:
+      "https://i.ibb.co/TD6w8FB3/peter-herrmann-q-Zbeb-Mw-G5-VU-unsplash.jpg",
+  },
+  {
+    id: 5,
+    name: "Countryside Inn",
+    location: "Sylhet",
+    rating: 4.6,
+    price: 85,
+    type: "Countryside",
+    facilities: ["Free Wi-Fi"],
+    image:
+      "https://i.ibb.co/yFLL31mg/sourabh-adhya-t3-Cm-Gk-WZw-JY-unsplash.jpg",
+  },
+  {
+    id: 6,
+    name: "Seaside Escape",
+    location: "Kuakata",
+    rating: 4.7,
+    price: 125,
+    type: "Beach",
+    facilities: ["Free Wi-Fi", "Swimming Pool"],
+    image: "https://i.ibb.co/pBwtv1vL/kalea-Db-RE2l-Sc-N5-E-unsplash.jpg",
+  },
+  {
+    id: 7,
+    name: "Hilltop Haven",
+    location: "Rangamati",
+    rating: 4.8,
+    price: 140,
+    type: "Mountain",
+    facilities: ["Free Wi-Fi", "Concierge"],
+    image: "https://i.ibb.co/DfQwcZmJ/edwin-petrus-CP4ms-RXKWOM-unsplash.jpg",
+  },
+  {
+    id: 8,
+    name: "Urban Comfort Suites",
+    location: "Chattogram",
+    rating: 4.4,
+    price: 95,
+    type: "CityApart",
+    facilities: ["Free Wi-Fi"],
+    image: "https://i.ibb.co/7tMN5wZC/hero-Icon1.jpg",
+  },
+  {
+    id: 9,
+    name: "Royal Grand Hotel",
+    location: "Dhaka",
+    rating: 4.9,
+    price: 200,
+    type: "Luxury",
+    facilities: ["Free Wi-Fi", "Swimming Pool", "Concierge"],
+    image:
+      "https://i.ibb.co/8g0ZxGPL/dominic-kurniawan-suryaputra-6qfez-K5-Vkz-Y-unsplash.jpg",
+  },
+  {
+    id: 10,
+    name: "Green Valley Retreat",
+    location: "Mymensingh",
+    rating: 4.6,
+    price: 100,
+    type: "Countryside",
+    facilities: ["Free Wi-Fi"],
+    image: "https://i.ibb.co/whBdrQwp/a-p-2-V-gta-BMM28-unsplash.jpg",
+  },
+  {
+    id: 11,
+    name: "Sunset Bay Resort",
+    location: "Saint Martin",
+    rating: 4.7,
+    price: 150,
+    type: "Beach",
+    facilities: ["Free Wi-Fi", "Swimming Pool"],
+    image:
+      "https://i.ibb.co/m52dBrFL/antonio-araujo-7-YBhsz-MWnk-A-unsplash.jpg",
+  },
+  {
+    id: 12,
+    name: "Skyline Tower Hotel",
+    location: "Dhaka",
+    rating: 4.5,
+    price: 120,
+    type: "CityApart",
+    facilities: ["Free Wi-Fi", "Concierge"],
+    image: "https://i.ibb.co/Z12qGRwj/ben-grayland-z-Wn-Po-FMTXCs-unsplash.jpg",
+  },
+];
 
 const AllRooms = () => {
-  const navigate = useNavigate();
-  const [openFilters, setOpenFilters] = useState(false);
-
-  const roomTypes = ["Single Bed", "Double Bed", "Luxury Bed", "Family Suite"];
-
-  const priceRange = [
-    "0 to 500",
-    "500 to 1000",
-    "1000 to 2000",
-    "2000 to 5000",
-  ];
-
-  const sortOptions = [
-    "Price Low to High",
-    "Price High to Low",
-    "Newest First",
-  ];
-
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-start justify-between pt-28 md:pt-35 px-4 md:px-16 lg:px-24 xl:px-32  text-gray-800 ">
-      {/* left side */}
-      <div className="">
-        <div className="flex flex-col items-start text-left">
-          <h1 className="font-playfair text-4xl md:text-[40px]">Hotel Rooms</h1>
-          <p className="text-sm md:text-base text-gray-600 mt-2 max-w-174 mb-4">
-            Take advantage of our limited-time offers and special packages to
-            enhance your stay and create unforgettable memories.
-          </p>
-        </div>
-        {roomsDummyData.map((room) => (
-          <div
-            key={room._id}
-            className="flex flex-col md:flex-row items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0 "
+    <div className="min-h-screen max-w-screen-2xl mx-auto bg-base-100 px-4 py-10 my-20">
+      <Fade direction="up" triggerOnce>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-secondary">
+          Discover Your Perfect Stay
+        </h2>
+        <p className="text-center text-gray-500 mb-10">
+          Browse our curated selection of hotels across Bangladesh. Whether
+          you're looking for luxury, nature, or city vibes — we've got you
+          covered.
+        </p>
+      </Fade>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {hotelsData.map((hotel) => (
+          <motion.div
+            key={hotel.id}
+            // whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="card bg-base-200 shadow-xl"
           >
-            <img
-              onClick={() => {
-                navigate(`/rooms/${room._id}`);
-                scrollTo(0, 0);
-              }}
-              src={room.images[0]}
-              alt="hotel-img"
-              title="View Room Details"
-              className="max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer"
-            />
-            <div className="md:w-1/2 flex flex-col gap-2">
-              <p className="text-slate-500">{room.hotel.city}</p>
-              <p
-                onClick={() => {
-                  navigate(`/rooms/${room._id}`);
-                  scrollTo(0, 0);
-                }}
-                className="text-gray-800 text-3xl font-playfair cursor-pointer"
-              >
-                {room.hotel.name}
+            <figure>
+              <img
+                src={hotel.image}
+                alt={hotel.name}
+                className="w-full h-60 object-cover"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title text-lg font-semibold">{hotel.name}</h2>
+              <p className="flex items-center gap-2 text-sm text-gray-600">
+                <FaMapMarkerAlt className="text-sky-600" /> {hotel.location}
               </p>
-              <div className="flex items-center">
-                <StarRating />
-                <p className="ml-2">200+ reviews</p>
-              </div>
-              <div className="flex items-center gap-1 text-slate-600 mt-2 text-sm mb-4">
-                <img src={assets.locationIcon} alt="location-icon" />
-                <span>{room.hotel.address}</span>
-              </div>
-              {/* room amenities */}
-              <div className="flex flex-wrap items-center mt-3 mb-6 gap-4">
-                {room.amenities.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F5F5FF]/70"
-                  >
-                    <img
-                      src={facilityIcons[item]}
-                      alt="item"
-                      className="w-5 h-5"
-                    />
-                    <p className="text-xs">{item}</p>
-                  </div>
-                ))}
-              </div>
-              {/* room price for night */}
-              <p className="text-xl font-medium text-gray-700">
-                ${room.pricePerNight} /night
+              <p className="text-sm text-gray-500">
+                Type: <span className="font-medium">{hotel.type}</span>
               </p>
+              <div className="flex items-center justify-between mt-2">
+                <span className="flex items-center gap-1 text-yellow-500">
+                  <FaStar /> {hotel.rating}
+                </span>
+                <span className="text-sm font-bold text-sky-600">
+                  ${hotel.price}/night
+                </span>
+              </div>
+              <div className="mt-3">
+                <p className="text-sm font-semibold mb-1">Facilities:</p>
+                <div className="flex flex-wrap gap-2 text-sm text-gray-600">
+                  {hotel.facilities.includes("Free Wi-Fi") && (
+                    <span className="flex items-center gap-1">
+                      <FaWifi /> Wi-Fi
+                    </span>
+                  )}
+                  {hotel.facilities.includes("Swimming Pool") && (
+                    <span className="flex items-center gap-1">
+                      <FaSwimmingPool /> Pool
+                    </span>
+                  )}
+                  {hotel.facilities.includes("Concierge") && (
+                    <span className="flex items-center gap-1">
+                      <FaConciergeBell /> Concierge
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div className="card-actions justify-end mt-4">
+                <button className="btn btn-block btn-sm">Book Now</button>
+              </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-        <div></div>
-      </div>
-      {/* filters */}
-      <div className="bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16">
-        <div
-          className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${
-            openFilters && "border-b"
-          }`}
-        >
-          <p className="text-base font-medium text-gray-800">FILTERS</p>
-          <div className="text-xs cursor-pointer">
-            <span
-              onClick={() => setOpenFilters(!openFilters)}
-              className="lg:hidden"
-            >
-              {openFilters ? "HIDE" : "SHOW"}
-            </span>
-            <span className="hidden lg:block">CLEAR</span>
-          </div>
-        </div>
-        <div
-          className={`${
-            openFilters ? "h-auto" : "h-0 lg:h-auto"
-          } overflow-hidden transition-all duration-700`}
-        >
-          <div className="px-5 pt-5">
-            <p className="font-medium text-gray-800 pb-2">Popular filters</p>
-            {roomTypes.map((room, index) => (
-              <CheckBox key={index} label={room} />
-            ))}
-          </div>
-          <div className="px-5 pt-5">
-            <p className="font-medium text-gray-800 pb-2">Price Range </p>
-            {priceRange.map((range, index) => (
-              <CheckBox key={index} label={`$ ${range}`} />
-            ))}
-          </div>
-          <div className="px-5 pt-5 pb-7">
-            <p className="font-medium text-gray-800 pb-2">Sort By </p>
-            {sortOptions.map((option, index) => (
-              <RadioButton key={index} label={option} />
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

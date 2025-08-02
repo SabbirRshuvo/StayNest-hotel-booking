@@ -23,7 +23,7 @@ const TotalCost = () => {
               is included in the total payment and any potential discounts they
               may receive.
             </p>
-            <ul className="list-disc list-inside space-y-3 text-gray-300 text-base">
+            <ul className="list-disc list-inside space-y-3 text-gray-300 text-base text-left">
               <li>Sunset view Suites with private balconies</li>
               <li>Family Villas with multiple bedrooms</li>
               <li>24/7 concierge and room service</li>

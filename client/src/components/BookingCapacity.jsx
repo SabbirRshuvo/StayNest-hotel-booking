@@ -68,19 +68,19 @@ const BookingCapacity = () => {
             </p>
             <ul className="space-y-4 text-base text-gray-300">
               <li className="flex items-center gap-3">
-                <FaBed className="text-xl text-blue-600" />
+                <FaBed className="text-2xl  text-orange-400" />
                 King-size beds with premium linens
               </li>
-              <li className="flex items-center gap-3">
-                <FaWifi className="text-xl text-blue-600" />
+              <li className="flex items-center gap-3 ">
+                <FaWifi className="text-orange-400 text-2xl" />
                 High-speed Wi-Fi in all rooms
               </li>
               <li className="flex items-center gap-3">
-                <FaSwimmer className="text-xl text-blue-600" />
+                <FaSwimmer className="text-orange-400 text-2xl" />
                 Access to private pool and beach
               </li>
               <li className="flex items-center gap-3">
-                <FaUtensils className="text-xl text-blue-600" />
+                <FaUtensils className="text-orange-400 text-2xl" />
                 In-room dining and minibar
               </li>
             </ul>
