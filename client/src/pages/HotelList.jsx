@@ -8,6 +8,7 @@ import {
   FaConciergeBell,
 } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
+import { Link, useNavigate } from "react-router";
 
 const hotelsData = [
   {
@@ -137,7 +138,11 @@ const hotelsData = [
   },
 ];
 
-const AllRooms = () => {
+const HotelList = () => {
+  const navigate = useNavigate();
+  const handleBook = (hotel) => {
+    navigate(`/rooms/${hotel.id}`, { state: { hotel } });
+  };
   return (
     <div className="min-h-screen max-w-screen-2xl mx-auto bg-base-100 px-4 py-10 my-20">
       <Fade direction="up" triggerOnce>
@@ -155,8 +160,8 @@ const AllRooms = () => {
         {hotelsData.map((hotel) => (
           <motion.div
             key={hotel.id}
-            // whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1.05 }} // scale up by 5%
+            transition={{ duration: 0.8, type: "keyframes", stiffness: 100 }}
             className="card bg-base-200 shadow-xl"
           >
             <figure>
@@ -203,7 +208,12 @@ const AllRooms = () => {
                 </div>
               </div>
               <div className="card-actions justify-end mt-4">
-                <button className="btn btn-block btn-sm">Book Now</button>
+                <button
+                  onClick={() => handleBook(hotel)}
+                  className="btn btn-block btn-sm"
+                >
+                  Book Now
+                </button>
               </div>
             </div>
           </motion.div>
@@ -213,4 +223,4 @@ const AllRooms = () => {
   );
 };
 
-export default AllRooms;
+export default HotelList;
