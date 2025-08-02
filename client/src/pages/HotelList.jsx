@@ -158,10 +158,11 @@ const HotelList = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {hotelsData.map((hotel) => (
           <motion.div
+            onClick={() => handleBook(hotel)}
             key={hotel.id}
             whileHover={{ scale: 1.05 }} // scale up by 5%
             transition={{ duration: 0.8, type: "keyframes", stiffness: 100 }}
-            className="card bg-base-200 shadow-xl"
+            className="card bg-base-200 shadow-xl cursor-pointer"
           >
             <figure>
               <img
@@ -207,12 +208,7 @@ const HotelList = () => {
                 </div>
               </div>
               <div className="card-actions justify-end mt-4">
-                <button
-                  onClick={() => handleBook(hotel)}
-                  className="btn btn-block btn-sm"
-                >
-                  Book Now
-                </button>
+                <button className="btn btn-block btn-sm">Book Now</button>
               </div>
             </div>
           </motion.div>
