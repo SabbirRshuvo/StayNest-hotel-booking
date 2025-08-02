@@ -28,20 +28,29 @@ const RoomDetails = () => {
       <div className="mt-6 bg-base-200 p-6 rounded-lg shadow-md">
         <h3 className="text-2xl font-semibold mb-4">Book Your Stay</h3>
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input
-            type="date"
-            className="input input-bordered focus:outline-none"
-          />
-          <input
-            type="date"
-            className="input input-bordered focus:outline-none"
-          />
-          <input
-            type="number"
-            min="1"
-            defaultValue="1"
-            className="input input-bordered focus:outline-none"
-          />
+          <div className="flex flex-col">
+            <label>Check-in-date</label>
+            <input
+              type="date"
+              className="input input-bordered focus:outline-none"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label>Check-out-date</label>
+            <input
+              type="date"
+              className="input input-bordered focus:outline-none"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label>Guest</label>
+            <input
+              type="number"
+              min="1"
+              defaultValue="1"
+              className="input input-bordered focus:outline-none"
+            />
+          </div>
           <button className="btn btn-accent focus:outline-none">
             Confirm Booking
           </button>

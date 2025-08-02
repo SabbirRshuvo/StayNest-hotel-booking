@@ -12,6 +12,7 @@ import Dashboard from "../layout/HotelOwner/Dashboard";
 import Contact from "../pages/Contact";
 import About from "../pages/About";
 import HotelList from "../pages/HotelList";
+import PrivateRoute from "../private/PrivateRoute";
 
 const routes = createBrowserRouter([
   {

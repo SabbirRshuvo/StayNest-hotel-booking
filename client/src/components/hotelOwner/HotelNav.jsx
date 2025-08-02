@@ -17,7 +17,7 @@ const HotelNav = () => {
     <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white transition-all duration-300">
       <Link to="/" className="flex items-center">
         <h1 className="text-xl font-semibold text-black">
-          stay<span className="text-lime-600">Nest</span>
+          Stay<span className="text-lime-600">Nest</span>
         </h1>
       </Link>
 
