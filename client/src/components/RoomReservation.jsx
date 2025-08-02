@@ -12,6 +12,7 @@ import image6 from "../assets/Reservation/reservation6.jpg";
 import image7 from "../assets/Reservation/reservation7.jpg";
 import image8 from "../assets/Reservation/reservation8.jpg";
 import image9 from "../assets/Reservation/reservation9.jpg";
+import { Fade } from "react-awesome-reveal";
 
 const cards = [
   {
@@ -119,30 +120,32 @@ const RoomReservation = () => {
 
       <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto">
         {cards.map((card, idx) => (
-          <motion.div
-            // whileHover={{ scale: 1.03 }}
-            key={idx}
-            className="bg-[#29412a] rounded-lg overflow-hidden shadow-lg flex flex-col"
-          >
-            <img
-              src={card.img}
-              alt={card.title}
-              className="h-64 w-full object-cover"
-            />
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold mb-4 text-white">
-                {card.title}
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-200">
-                {card.bullets.map((point, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <FaCheckCircle className="text-yellow-400 mt-1" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+          <Fade direction="up" triggerOnce>
+            <motion.div
+              // whileHover={{ scale: 1.03 }}
+              key={idx}
+              className="bg-[#29412a] rounded-lg overflow-hidden shadow-lg flex flex-col"
+            >
+              <img
+                src={card.img}
+                alt={card.title}
+                className="h-64 w-full object-cover"
+              />
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  {card.title}
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-200">
+                  {card.bullets.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <FaCheckCircle className="text-yellow-400 mt-1" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </Fade>
         ))}
       </div>
     </section>

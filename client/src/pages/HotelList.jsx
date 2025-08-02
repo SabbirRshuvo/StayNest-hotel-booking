@@ -19,7 +19,7 @@ const hotelsData = [
     price: 130,
     type: "Beach",
     facilities: ["Free Wi-Fi", "Swimming Pool", "Concierge"],
-    image: "https://i.ibb.co/CKP1WQyK/nathan-cima-4aq-H2ut-APAs-unsplash.jpg",
+    image: "https://i.ibb.co/Wv3ZShsw/nathan-cima-4aq-H2ut-APAs-unsplash.jpg",
   },
   {
     id: 2,
@@ -29,8 +29,7 @@ const hotelsData = [
     price: 110,
     type: "Mountain",
     facilities: ["Free Wi-Fi", "Concierge"],
-    image:
-      "https://i.ibb.co/hxrgW0ys/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpghttps://source.unsplash.com/400x300/?mountain,hotel",
+    image: "https://i.ibb.co/BHwWV643/new-1.jpg",
   },
   {
     id: 3,
@@ -40,7 +39,7 @@ const hotelsData = [
     price: 90,
     type: "CityApart",
     facilities: ["Free Wi-Fi"],
-    image: "https://i.ibb.co/YTD27Pxf/visualsofdana-T5p-L6ci-En-I-unsplash.jpg",
+    image: "https://i.ibb.co/bMzm30tj/edwin-petrus-CP4ms-RXKWOM-unsplash.jpg",
   },
   {
     id: 4,
@@ -51,7 +50,7 @@ const hotelsData = [
     type: "Luxury",
     facilities: ["Free Wi-Fi", "Swimming Pool", "Concierge"],
     image:
-      "https://i.ibb.co/TD6w8FB3/peter-herrmann-q-Zbeb-Mw-G5-VU-unsplash.jpg",
+      "https://i.ibb.co/9ktLMTJB/peter-herrmann-q-Zbeb-Mw-G5-VU-unsplash.jpg",
   },
   {
     id: 5,
@@ -62,7 +61,7 @@ const hotelsData = [
     type: "Countryside",
     facilities: ["Free Wi-Fi"],
     image:
-      "https://i.ibb.co/yFLL31mg/sourabh-adhya-t3-Cm-Gk-WZw-JY-unsplash.jpg",
+      "https://i.ibb.co/TxyvfPm4/sourabh-adhya-t3-Cm-Gk-WZw-JY-unsplash.jpg",
   },
   {
     id: 6,
@@ -72,7 +71,7 @@ const hotelsData = [
     price: 125,
     type: "Beach",
     facilities: ["Free Wi-Fi", "Swimming Pool"],
-    image: "https://i.ibb.co/pBwtv1vL/kalea-Db-RE2l-Sc-N5-E-unsplash.jpg",
+    image: "https://i.ibb.co/hxTKDQS7/new-6.jpg",
   },
   {
     id: 7,
@@ -82,7 +81,7 @@ const hotelsData = [
     price: 140,
     type: "Mountain",
     facilities: ["Free Wi-Fi", "Concierge"],
-    image: "https://i.ibb.co/DfQwcZmJ/edwin-petrus-CP4ms-RXKWOM-unsplash.jpg",
+    image: "https://i.ibb.co/zVfkFbfX/ben-grayland-z-Wn-Po-FMTXCs-unsplash.jpg",
   },
   {
     id: 8,
@@ -92,7 +91,7 @@ const hotelsData = [
     price: 95,
     type: "CityApart",
     facilities: ["Free Wi-Fi"],
-    image: "https://i.ibb.co/7tMN5wZC/hero-Icon1.jpg",
+    image: "https://i.ibb.co/k6PpvBmm/new-4.jpg",
   },
   {
     id: 9,
@@ -103,7 +102,7 @@ const hotelsData = [
     type: "Luxury",
     facilities: ["Free Wi-Fi", "Swimming Pool", "Concierge"],
     image:
-      "https://i.ibb.co/8g0ZxGPL/dominic-kurniawan-suryaputra-6qfez-K5-Vkz-Y-unsplash.jpg",
+      "https://i.ibb.co/6cBCtZhC/dominic-kurniawan-suryaputra-6qfez-K5-Vkz-Y-unsplash.jpg",
   },
   {
     id: 10,
@@ -113,7 +112,7 @@ const hotelsData = [
     price: 100,
     type: "Countryside",
     facilities: ["Free Wi-Fi"],
-    image: "https://i.ibb.co/whBdrQwp/a-p-2-V-gta-BMM28-unsplash.jpg",
+    image: "https://i.ibb.co/WWYtk710/new-3.jpg",
   },
   {
     id: 11,
@@ -124,7 +123,7 @@ const hotelsData = [
     type: "Beach",
     facilities: ["Free Wi-Fi", "Swimming Pool"],
     image:
-      "https://i.ibb.co/m52dBrFL/antonio-araujo-7-YBhsz-MWnk-A-unsplash.jpg",
+      "https://i.ibb.co/nhnBX7w/antonio-araujo-7-YBhsz-MWnk-A-unsplash.jpg",
   },
   {
     id: 12,
@@ -134,7 +133,7 @@ const hotelsData = [
     price: 120,
     type: "CityApart",
     facilities: ["Free Wi-Fi", "Concierge"],
-    image: "https://i.ibb.co/Z12qGRwj/ben-grayland-z-Wn-Po-FMTXCs-unsplash.jpg",
+    image: "https://i.ibb.co/yFDyP17D/a-p-2-V-gta-BMM28-unsplash.jpg",
   },
 ];
 

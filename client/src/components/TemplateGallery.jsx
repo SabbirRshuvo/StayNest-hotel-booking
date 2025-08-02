@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import image1 from "../assets/Gallery/gallery21.jpg";
 import image2 from "../assets/Gallery/gallery22.jpg";
 import image3 from "../assets/Gallery/gallery23.jpg";
@@ -36,21 +37,22 @@ const TemplateGallery = () => {
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 mx-auto border-b border-gray-400 pb-2 max-w-sm md:max-w-md lg:max-w-xl my-10">
         Hotel Gallery
       </h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] max-w-screen-xl mx-auto">
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className={`overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ${img.colSpan} ${img.rowSpan}`}
-          >
-            <img
-              src={img.src}
-              alt={`Hotel image ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
+      <Fade direction="left" triggerOnce>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] max-w-screen-xl mx-auto">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className={`overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ${img.colSpan} ${img.rowSpan}`}
+            >
+              <img
+                src={img.src}
+                alt={`Hotel image ${index + 1}`}
+                className="w-full h-full object-cover "
+              />
+            </div>
+          ))}
+        </div>
+      </Fade>
     </div>
   );
 };

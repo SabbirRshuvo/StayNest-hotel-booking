@@ -5,6 +5,7 @@ import image3 from "../assets/Mountain/img-16.jpg";
 import image4 from "../assets/apart.jpg";
 import image5 from "../assets/countryside.jpg";
 import image6 from "../assets/coming-soon.jpg";
+import { Fade } from "react-awesome-reveal";
 
 const HotelPreview = () => {
   return (
@@ -22,79 +23,91 @@ const HotelPreview = () => {
 
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto">
         {/* Demo 1 */}
-        <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
-          <img
-            src={image1}
-            alt="Hotel Demo 1"
-            className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-          <div className="p-4 bg-gray-900">
-            <h3 className="text-lg font-semibold">Luxury Hotel</h3>
+        <Fade direction="left" triggerOnce>
+          <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={image1}
+              alt="Hotel Demo 1"
+              className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-4 bg-gray-900">
+              <h3 className="text-lg font-semibold">Luxury Hotel</h3>
+            </div>
           </div>
-        </div>
+        </Fade>
 
         {/* Demo 2 */}
-        <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
-          <img
-            src={image2}
-            alt="Hotel Demo 2"
-            className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-          <div className="p-4 bg-gray-900">
-            <h3 className="text-lg font-semibold">Beach Resort</h3>
+        <Fade direction="right" triggerOnce>
+          <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={image2}
+              alt="Hotel Demo 2"
+              className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-4 bg-gray-900">
+              <h3 className="text-lg font-semibold">Beach Resort</h3>
+            </div>
           </div>
-        </div>
+        </Fade>
 
         {/* Demo 3 */}
-        <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
-          <img
-            src={image3}
-            alt="Hotel Demo 3"
-            className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-          <div className="p-4 bg-gray-900">
-            <h3 className="text-lg font-semibold">Mountain Retreat</h3>
+        <Fade direction="left" triggerOnce>
+          <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={image3}
+              alt="Hotel Demo 3"
+              className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-4 bg-gray-900">
+              <h3 className="text-lg font-semibold">Mountain Retreat</h3>
+            </div>
           </div>
-        </div>
+        </Fade>
         {/* Demo 4 */}
-        <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
-          <img
-            src={image4}
-            alt="Hotel Demo 3"
-            className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-          <div className="p-4 bg-gray-900">
-            <h3 className="text-lg font-semibold">City Apart</h3>
+        <Fade direction="right" triggerOnce>
+          <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={image4}
+              alt="Hotel Demo 3"
+              className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-4 bg-gray-900">
+              <h3 className="text-lg font-semibold">City Apart</h3>
+            </div>
           </div>
-        </div>
+        </Fade>
         {/* Demo 5 */}
-        <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
-          <img
-            src={image5}
-            alt="Hotel Demo 3"
-            className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-          <div className="p-4 bg-gray-900">
-            <h3 className="text-lg font-semibold">Countryside Lodge</h3>
+        <Fade direction="left" triggerOnce>
+          <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={image5}
+              alt="Hotel Demo 3"
+              className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-4 bg-gray-900">
+              <h3 className="text-lg font-semibold">Countryside Lodge</h3>
+            </div>
           </div>
-        </div>
+        </Fade>
         {/* Demo 6 */}
-        <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
-          <img
-            src={image6}
-            alt="Hotel Demo 3"
-            className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-          <div className="p-4 bg-gray-900">
-            <h3 className="text-lg font-semibold">Coming soon</h3>
+        <Fade direction="right" triggerOnce>
+          <div className="group cursor-pointer overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={image6}
+              alt="Hotel Demo 3"
+              className="w-full h-90 object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="p-4 bg-gray-900">
+              <h3 className="text-lg font-semibold">Coming soon</h3>
+            </div>
           </div>
-        </div>
+        </Fade>
       </div>
     </section>
   );

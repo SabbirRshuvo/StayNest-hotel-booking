@@ -1,55 +1,39 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { Fade, Slide } from "react-awesome-reveal";
-
-import logo from "../assets/heroIcon3.jpg"; // Adjust the path as necessary
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
 
 const Contact = () => {
   return (
-    <div className="bg-gray-100 text-gray-800">
-      {/* Header */}
-      <div className=" w-full h-[300px] md:h-[400px] overflow-hidden">
-        <motion.h1
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative text-white text-4xl md:text-5xl font-bold z-10"
-        >
-          <img src={logo} alt="" />
-        </motion.h1>
-      </div>
+    <div className="min-h-screen bg-base-100 px-4 py-10 my-24">
+      <Fade direction="up" triggerOnce>
+        <div className="max-w-6xl mx-auto">
+          {/* Heading */}
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-sky-600">
+            Contact Us
+          </h2>
+          <p className="text-center text-gray-500 mb-10">
+            Have questions or need help with your booking? Reach out to us
+            anytime.
+          </p>
 
-      {/* Contact Info Cards */}
-      <div className="py-16 px-4 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <Fade cascade>
-          <div className="bg-base-100 shadow-md rounded-lg p-6 text-center">
-            <FaPhoneAlt className="text-3xl mx-auto text-lime-600 mb-3" />
-            <h2 className="text-xl font-semibold mb-2">Phone</h2>
-            <p>+880 1734 0668 70</p>
-          </div>
-          <div className="bg-base-100 shadow-md rounded-lg p-6 text-center ">
-            <FaEnvelope className="text-3xl mx-auto text-sky-600 mb-3" />
-            <h2 className="text-xl font-semibold mb-2 ">Email</h2>
-            <p>sabbirhshuvo11 @gmail.com</p>
-          </div>
-          <div className="bg-base-100 shadow-md rounded-lg p-6 text-center">
-            <FaMapMarkerAlt className="text-3xl mx-auto text-sky-800 mb-3" />
-            <h2 className="text-xl font-semibold mb-2">Address</h2>
-            <p>Dhaka, Bangladesh</p>
-          </div>
-        </Fade>
-      </div>
-
-      {/* Contact Form */}
-      <div className="px-4 md:px-24 pb-16">
-        <Slide direction="down">
-          <div className="bg-base-200 rounded-xl p-6 md:p-12 shadow-md">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-              Send Us a Message
-            </h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-base-200 p-6 rounded-lg shadow-md"
+            >
+              <h3 className="text-xl font-semibold mb-4">Send Us a Message</h3>
+              <form className="grid grid-cols-1 gap-4">
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -60,39 +44,71 @@ const Contact = () => {
                   placeholder="Your Email"
                   className="input input-bordered w-full"
                 />
-              </div>
-              <input
-                type="text"
-                placeholder="Subject"
-                className="input input-bordered w-full"
-              />
-              <textarea
-                placeholder="Your Message"
-                className="textarea textarea-bordered w-full h-40"
-              ></textarea>
-              <div className="text-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn btn-secondary px-8"
-                >
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  className="input input-bordered w-full"
+                />
+                <textarea
+                  placeholder="Your Message"
+                  className="textarea textarea-bordered w-full h-32"
+                />
+                <button type="submit" className="btn btn-sky-600 w-full">
                   Send Message
-                </motion.button>
-              </div>
-            </form>
-          </div>
-        </Slide>
-      </div>
+                </button>
+              </form>
+            </motion.div>
 
-      {/* Google Map */}
-      <div className="h-[300px] w-full">
-        <iframe
-          className="w-full h-full"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902486009531!2d90.39144851445644!3d23.75087679456496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b89f05aee5db%3A0x2ffbe9f9c896313c!2sDhaka!5e0!3m2!1sen!2sbd!4v1615568379046!5m2!1sen!2sbd"
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
-      </div>
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="bg-base-200 p-6 rounded-lg shadow-md"
+            >
+              <h3 className="text-xl font-semibold mb-4">Our Contact Info</h3>
+              <div className="space-y-4 text-gray-700">
+                <p className="flex items-center gap-2">
+                  <FaPhoneAlt className="text-sky-600" /> +880 1234 567890
+                </p>
+                <p className="flex items-center gap-2">
+                  <FaEnvelope className="text-sky-600" />{" "}
+                  support@hotelbooking.com
+                </p>
+                <p className="flex items-center gap-2">
+                  <FaMapMarkerAlt className="text-sky-600" /> 123 Beach Road,
+                  Cox's Bazar, Bangladesh
+                </p>
+                <p>Support Hours: 9:00 AM – 10:00 PM (Everyday)</p>
+              </div>
+
+              {/* Social Links */}
+              <div className="mt-6">
+                <h4 className="text-lg font-semibold mb-2">Follow Us</h4>
+                <div className="flex gap-4 text-2xl text-sky-600">
+                  <FaFacebook className="hover:text-blue-600 cursor-pointer" />
+                  <FaInstagram className="hover:text-pink-500 cursor-pointer" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Optional Map Section */}
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold mb-4 text-center">
+              Our Location
+            </h3>
+            <div className="w-full h-64 rounded-lg overflow-hidden shadow-md">
+              <iframe
+                title="Hotel Location"
+                src="https://maps.google.com/maps?q=Cox's%20Bazar&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-none"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </Fade>
     </div>
   );
 };
