@@ -17,7 +17,11 @@ app.use(morgan("dev"));
 // CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://stay-nest-hotel-booking.web.app",
+      "https://stay-nest-hotel-booking.firebaseapp.com",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
