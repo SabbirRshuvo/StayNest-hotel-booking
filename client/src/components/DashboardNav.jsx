@@ -4,7 +4,7 @@ import AuthContext from "../provider/AuthContext";
 import { FaSignOutAlt } from "react-icons/fa";
 import { MdManageAccounts, MdOutlineCalendarMonth } from "react-icons/md";
 
-const HotelNav = () => {
+const DashboardNav = () => {
   const { user, logout } = useContext(AuthContext);
   const handleSignOut = async () => {
     try {
@@ -14,14 +14,10 @@ const HotelNav = () => {
     }
   };
   return (
-    <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white transition-all duration-300">
-      <Link to="/" className="flex items-center">
-        <h1 className="text-xl font-semibold text-black">
-          Stay<span className="text-lime-600">Nest</span>
-        </h1>
+    <div className="w-full flex items-center justify-between px-6 py-4 bg-white shadow-sm border max-w-screen-3xl mx-auto border-gray-400">
+      <Link to="/" className="text-xl font-semibold text-gray-800">
+        🏨 HotelEase
       </Link>
-
-      {/* Navigation Links */}
       {user ? (
         <div className="dropdown dropdown-end">
           <div
@@ -54,7 +50,7 @@ const HotelNav = () => {
             </li>
 
             {/* My Bookings Link */}
-            <li>
+            {/* <li>
               <Link
                 to="/my-bookings"
                 className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1"
@@ -62,7 +58,7 @@ const HotelNav = () => {
                 <MdOutlineCalendarMonth />
                 My Bookings
               </Link>
-            </li>
+            </li> */}
 
             {/* Sign Out Button */}
             <li>
@@ -84,8 +80,9 @@ const HotelNav = () => {
           Sign In
         </Link>
       )}
+      <hr className="absolute bottom-0 left-0 w-full border-gray-200" />
     </div>
   );
 };
 
-export default HotelNav;
+export default DashboardNav;

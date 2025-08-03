@@ -120,7 +120,7 @@ const Navbar = () => {
               {/* User Info */}
               <li>
                 <Link
-                  to="/dashboard"
+                  to="/users"
                   className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
                 >
                   <MdDashboard />
@@ -143,7 +143,7 @@ const Navbar = () => {
               </li>
 
               {/* My Bookings Link */}
-              <li>
+              {/* <li>
                 <Link
                   to="/my-bookings"
                   className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
@@ -151,7 +151,7 @@ const Navbar = () => {
                   <MdOutlineCalendarMonth />
                   My Bookings
                 </Link>
-              </li>
+              </li> */}
 
               {/* Sign Out Button */}
               <li>

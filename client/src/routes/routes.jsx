@@ -6,12 +6,13 @@ import About from "../pages/ExtraPages/About";
 import HotelList from "../pages/ExtraPages/HotelList";
 import RoomDetails from "../pages/ExtraPages/RoomDetails";
 import MyBookings from "../pages/ExtraPages/MyBookings";
-import HotelLayout from "../pages/HotelOwner/HotelLayout";
-import OwnerDashboard from "../pages/HotelOwner/OwnerDashboard";
-import AddRoom from "../pages/HotelOwner/AddRoom";
-import ListRoom from "../pages/HotelOwner/ListRoom";
 import SignIn from "../sheared/SignIn";
 import SignUp from "../sheared/SignUp";
+import UsersLayout from "../layout/Users/UsersLayout";
+import UserDashboard from "../pages/Users/UserDashboard";
+import Payment from "../pages/Users/Payment";
+import BookingList from "../pages/Users/BookingList";
+import PrivateRoute from "../private/PrivateRoute";
 
 const routes = createBrowserRouter([
   {
@@ -45,25 +46,20 @@ const routes = createBrowserRouter([
       },
     ],
   },
-
   {
-    path: "/dashboard",
-    element: <HotelLayout />,
+    path: "/users",
+    element: (
+      <PrivateRoute>
+        <UsersLayout />
+      </PrivateRoute>
+    ),
     children: [
-      {
-        index: true,
-        element: <OwnerDashboard />,
-      },
-      {
-        path: "add-room",
-        element: <AddRoom />,
-      },
-      {
-        path: "list-room",
-        element: <ListRoom />,
-      },
+      { index: true, element: <UserDashboard /> },
+      { path: "payment", element: <Payment /> },
+      { path: "bookings", element: <BookingList /> },
     ],
   },
+
   {
     path: "/sign-in",
     element: <SignIn />,
