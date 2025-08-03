@@ -11,14 +11,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-//  Use Morgan middleware
 app.use(morgan("dev"));
 
 const allowedOrigins = [
+  "http://localhost:5173",
   "https://stay-nest-hotel-booking.web.app",
-  "http://localhost:3000",
 ];
-// CORS
+
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -38,15 +37,12 @@ app.use(
 app.use(express.json());
 connectDB();
 
-// Routes
 app.use("/bookings", bookingRoutes);
 
-// Root
 app.get("/", (req, res) => {
-  res.send("Hotel Booking API is running...");
+  res.send("Hotel Booking API is running on the server...");
 });
 
-// Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
