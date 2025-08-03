@@ -3,13 +3,12 @@ const { MongoClient } = require("mongodb");
 const uri = process.env.MONGODB_URI;
 
 const client = new MongoClient(uri);
-let db;
-console.log(uri);
+let database;
 
 async function connectDB() {
   try {
     await client.connect();
-    db = client.db(); // default db from URI
+    database = client.db("hotel-booking");
     console.log(" Connected to MongoDB");
   } catch (error) {
     console.error(" Failed to connect DB", error);
@@ -18,7 +17,7 @@ async function connectDB() {
 }
 
 function getDB() {
-  return db;
+  return database;
 }
 
 module.exports = { connectDB, getDB };

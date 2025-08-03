@@ -8,10 +8,15 @@ import {
 } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
 
-import room from "../../src/assets/room.jpg";
-import pool from "../../src/assets/pool.jpg";
-import dining from "../../src/assets/dining.jpg";
-import lobby from "../../src/assets/lobby.jpg";
+// import room from "../../src/assets/room.jpg";
+// import pool from "../../src/assets/pool.jpg";
+// import dining from "../../src/assets/dining.jpg";
+// import lobby from "../../src/assets/lobby.jpg";
+
+import room from "../../assets/room.jpg";
+import pool from "../../assets/pool.jpg";
+import dining from "../../assets/dining.jpg";
+import lobby from "../../assets/lobby.jpg";
 
 const About = () => {
   return (

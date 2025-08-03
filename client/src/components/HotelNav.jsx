@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router";
-import AuthContext from "../../provider/AuthContext";
+import AuthContext from "../provider/AuthContext";
 import { FaSignOutAlt } from "react-icons/fa";
 import { MdManageAccounts, MdOutlineCalendarMonth } from "react-icons/md";
 

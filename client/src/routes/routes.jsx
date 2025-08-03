@@ -1,18 +1,17 @@
-import { createBrowserRouter } from "react-router-dom"; // ✅ FIXED
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main/Main";
 import Home from "../layout/Main/Home";
-import SignUp from "../sheared/SignUp";
+import Contact from "../pages/ExtraPages/Contact";
+import About from "../pages/ExtraPages/About";
+import HotelList from "../pages/ExtraPages/HotelList";
+import RoomDetails from "../pages/ExtraPages/RoomDetails";
+import MyBookings from "../pages/ExtraPages/MyBookings";
+import HotelLayout from "../pages/HotelOwner/HotelLayout";
+import OwnerDashboard from "../pages/HotelOwner/OwnerDashboard";
+import AddRoom from "../pages/HotelOwner/AddRoom";
+import ListRoom from "../pages/HotelOwner/ListRoom";
 import SignIn from "../sheared/SignIn";
-import RoomDetails from "../pages/RoomDetails";
-import MyBookings from "../pages/MyBookings";
-import HotelLayout from "../layout/HotelOwner/HotelLayout";
-import AddRoom from "../layout/HotelOwner/AddRoom";
-import ListRoom from "../layout/HotelOwner/ListRoom";
-import Dashboard from "../layout/HotelOwner/Dashboard";
-import Contact from "../pages/Contact";
-import About from "../pages/About";
-import HotelList from "../pages/HotelList";
-import PrivateRoute from "../private/PrivateRoute";
+import SignUp from "../sheared/SignUp";
 
 const routes = createBrowserRouter([
   {
@@ -53,7 +52,7 @@ const routes = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />,
+        element: <OwnerDashboard />,
       },
       {
         path: "add-room",

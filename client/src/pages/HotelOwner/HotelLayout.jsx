@@ -1,6 +1,6 @@
 import React from "react";
-import HotelNav from "../../components/hotelOwner/HotelNav";
-import Sidebar from "../../components/hotelOwner/Sidebar";
+import HotelNav from "../../components/HotelNav";
+import Sidebar from "../../components/HotelSidebar";
 import { Outlet } from "react-router";
 
 const HotelLayout = () => {

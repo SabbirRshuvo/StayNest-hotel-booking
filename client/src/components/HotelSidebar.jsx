@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 import { FiHome, FiPlusSquare, FiList } from "react-icons/fi";
 
-const Sidebar = () => {
+const HotelSidebar = () => {
   const sidebarLinks = [
     {
       name: "Dashboard",
@@ -43,4 +43,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default HotelSidebar;

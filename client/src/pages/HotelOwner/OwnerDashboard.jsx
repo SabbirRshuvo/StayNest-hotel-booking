@@ -1,6 +1,6 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
-const Dashboard = () => {
+const OwnerDashboard = () => {
   const data = [
     { name: "Single", value: 10 },
     { name: "Double", value: 15 },
@@ -26,4 +26,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default OwnerDashboard;
