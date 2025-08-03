@@ -6,9 +6,9 @@ const UsersLayout = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <DashboardNav />
-      <div className="flex flex-1 bg-gray-300">
+      <div className="flex flex-1 ">
         <DashboardSidebar />
-        <main className="flex-1 p-6 bg-red-400">
+        <main className="flex-1 p-6 bg-gray-200">
           <Outlet />
         </main>
       </div>

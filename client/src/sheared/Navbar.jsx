@@ -85,13 +85,15 @@ const Navbar = () => {
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4 gap-x-8 cursor-pointer">
-        <div
-          className={`${isScrolled ? "text-black " : "text-white  "} ${
-            !isScrolled && !isHome ? "invert" : "invert-0"
-          }`}
+        {/* <Link
+          to="/users/dashboard"
+          className={`${
+            !isScrolled ? "text-white" : "text-black"
+          } border rounded-2xl px-4 `}
         >
-          <FaSearch />
-        </div>
+         
+          Dashboard
+        </Link> */}
 
         {user ? (
           <div className="dropdown dropdown-end">

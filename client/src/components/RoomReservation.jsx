@@ -120,7 +120,7 @@ const RoomReservation = () => {
 
       <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto">
         {cards.map((card, idx) => (
-          <Fade direction="up" triggerOnce key={idx}>
+          <Fade triggerOnce key={idx}>
             <motion.div
               // whileHover={{ scale: 1.03 }}
 

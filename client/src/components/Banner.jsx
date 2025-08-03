@@ -8,15 +8,15 @@ import {
 const Banner = () => {
   return (
     <div className="relative min-h-screen flex flex-col items-start justify-center px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 text-white">
-       <div className="absolute inset-0 bg-[url('../src/assets/heroImage.jpg')] bg-cover bg-center bg-no-repeat brightness-75 z-0"></div>
+      <div className="absolute inset-0 bg-[url('../src/assets/heroImage.jpg')] bg-cover bg-center bg-no-repeat brightness-75 z-0"></div>
       {/* Top text */}
       <div className="relative z-10">
-    <h1 className="text-4xl font-bold">Welcome to StayNest</h1>
-    <p className="mt-4 text-lg">Book your stay in comfort and style</p>
-  </div>
+        <h1 className="text-4xl font-bold">Welcome to StayNest</h1>
+        <p className="mt-4 text-lg">Book your stay in comfort and style</p>
+      </div>
 
       <p className="max-w-xl text-sm md:text-base mb-10">
-        From city escapes to beachside retreats. Book your next adventure in
+        From city escapes to beach side retreats. Book your next adventure in
         just a few clicks.
       </p>
 
