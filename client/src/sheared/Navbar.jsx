@@ -8,13 +8,11 @@ import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
 import { AiOutlineMenuFold } from "react-icons/ai";
-import logo from "../assets/logo.png";
 const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Hotels", path: "/rooms" },
     { name: "Contact", path: "/contact" },
-    { name: "About", path: "/about" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,14 +54,7 @@ const Navbar = () => {
             isScrolled || !isHome ? "text-gray-800" : "text-white  "
           } relative pb-1`}
         >
-          <img
-            src={logo}
-            alt="logo"
-            className={`h-7 w-7  ${isScrolled ? "invert-0" : "invert"} ${
-              !isHome ? "invert-0" : "invert"
-            }`}
-          />
-          StayNest
+          🏨 StayNest
           <span
             className={`block h-[2px] w-0 ${
               isScrolled || !isHome ? "bg-slate-700" : "bg-white"
@@ -120,7 +111,7 @@ const Navbar = () => {
               {/* User Info */}
               <li>
                 <Link
-                  to="/users"
+                  to="/users/dashboard"
                   className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
                 >
                   <MdDashboard />
@@ -232,7 +223,7 @@ const Navbar = () => {
               {/* User Info */}
               <li>
                 <Link
-                  to="/dashboard"
+                  to="/users/dashboard"
                   className="flex items-center gap-2 hover:bg-gray-100 rounded px-2 py-1 text-sm"
                 >
                   <MdDashboard />

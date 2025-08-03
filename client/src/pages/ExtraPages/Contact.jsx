@@ -9,6 +9,11 @@ import {
 } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
 
+import room from "../../assets/room.jpg";
+import pool from "../../assets/pool.jpg";
+import lobby from "../../assets/lobby.jpg";
+import dining from "../../assets/dining.jpg";
+
 const Contact = () => {
   return (
     <div className="min-h-screen bg-base-100 px-4 py-10 my-24">
@@ -25,6 +30,63 @@ const Contact = () => {
 
           {/* Grid Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* about section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="mb-10"
+            >
+              <h3 className="text-xl font-semibold mb-6 text-center">
+                A Glimpse of Paradise
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={room}
+                    alt="Room"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={pool}
+                    alt="Pool"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={dining}
+                    alt="Dining"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={lobby}
+                    alt="Lobby"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Location */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="text-center"
+            >
+              <h3 className="text-xl font-semibold mb-4">Where to Find Us</h3>
+              <p className="text-gray-600 mb-2">
+                123 Beach Road, Cox’s Bazar, Bangladesh
+              </p>
+              <p className="text-gray-600">
+                Serving guests from around the world with pride and passion.
+              </p>
+            </motion.div>
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

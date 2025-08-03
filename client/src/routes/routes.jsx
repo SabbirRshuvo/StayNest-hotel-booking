@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main/Main";
 import Home from "../layout/Main/Home";
 import Contact from "../pages/ExtraPages/Contact";
-import About from "../pages/ExtraPages/About";
 import HotelList from "../pages/ExtraPages/HotelList";
 import RoomDetails from "../pages/ExtraPages/RoomDetails";
 import MyBookings from "../pages/ExtraPages/MyBookings";
@@ -29,16 +28,16 @@ const routes = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/about",
-        element: <About />,
-      },
-      {
         path: "/rooms",
         element: <HotelList />,
       },
       {
         path: "/rooms/:id",
-        element: <RoomDetails />,
+        element: (
+          <PrivateRoute>
+            <RoomDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-bookings",
@@ -47,7 +46,7 @@ const routes = createBrowserRouter([
     ],
   },
   {
-    path: "/users",
+    path: "/users/dashboard",
     element: (
       <PrivateRoute>
         <UsersLayout />

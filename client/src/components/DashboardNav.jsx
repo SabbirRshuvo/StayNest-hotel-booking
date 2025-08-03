@@ -16,7 +16,7 @@ const DashboardNav = () => {
   return (
     <div className="w-full flex items-center justify-between px-6 py-4 bg-white shadow-sm border max-w-screen-3xl mx-auto border-gray-400">
       <Link to="/" className="text-xl font-semibold text-gray-800">
-        🏨 HotelEase
+        🏨 StayNest
       </Link>
       {user ? (
         <div className="dropdown dropdown-end">
